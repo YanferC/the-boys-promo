@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Boys Promo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Restricción de edad modal con fondo traslúcido y color rojo -->
+    <div id="age-modal" class="modal fade show" tabindex="-1" role="dialog" style="display:block; background:rgba(220,53,69,0.85); z-index:1050;">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content text-center" style="background:#222; color:#fff; border:3px solid #dc3545;">
+          <div class="modal-header">
+            <h5 class="modal-title">Advertencia +18</h5>
+          </div>
+          <div class="modal-body">
+            <p>Este sitio contiene contenido gore y para adultos. ¿Tienes más de 18 años?</p>
+            <button id="age-yes" class="btn btn-danger">Sí, tengo más de 18</button>
+            <button id="age-no" class="btn btn-secondary">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header con navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a class="navbar-brand d-flex align-items-center mx-auto text-center" href="#" style="font-size:2rem;">
+                <img src="assets/img/logo.png" alt="Logo" style="height:40px;" class="mr-2">
+                THE BOYS
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <!-- En el navbar -->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                        Temporadas
+                      </a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Temporada 1</a>
+                        <a class="dropdown-item" href="#">Temporada 2</a>
+                        <a class="dropdown-item" href="#">Temporada 3</a>
+                        <a class="dropdown-item" href="#">Temporada 4</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Spin Off: Gen V</a>
+                        <a class="dropdown-item" href="#">Spin Off: Diabolical</a>
+                        <a class="dropdown-item" href="#">Spin Off: Vought Rising</a>
+                      </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#synopsis">Sinopsis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#characters">Personajes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#calendar">Calendario</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <!-- Sección 1: Sinopsis -->
+        <section id="synopsis" class="mb-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>Sinopsis</h2>
+                    <p class="sinopsis-text">En un mundo donde los superhéroes son tan corruptos como los políticos, "The Boys" te muestra lo que pasa cuando los mortales deciden ponerles un alto... con mucho sarcasmo, sangre y explosiones. ¿Listo para ver a los "héroes" portarse peor que los villanos?</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="assets/img/theboys-banner.jpg" alt="Banner" class="img-fluid rounded">
+                </div>
+            </div>
+        </section>
+
+        <!-- Trailer -->
+        <section id="trailer" class="mb-5">
+          <h2>Tráilers por Temporada</h2>
+          <div id="trailerCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#trailerCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#trailerCarousel" data-slide-to="1"></li>
+              <li data-target="#trailerCarousel" data-slide-to="2"></li>
+              <li data-target="#trailerCarousel" data-slide-to="3"></li>
+              <li data-target="#trailerCarousel" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active text-center">
+                <h3 class="mb-3">Temporada 1</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AD0qUhZpbfc?si=JndIfEgsbh7SFT37" title="Tráiler Temporada 1" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <div class="carousel-item text-center">
+                <h3 class="mb-3">Temporada 2</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pQQ3ZkeJ9U0?si=DQUPLbuY0XaQ9pob" title="Tráiler Temporada 2" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <div class="carousel-item text-center">
+                <h3 class="mb-3">Temporada 3</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/elTgqUW-NYE?si=1pRb7xDJLCRE5vXk" title="Tráiler Temporada 3" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <div class="carousel-item text-center">
+                <h3 class="mb-3">Temporada 4</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/RzDdLdM59kw?si=Y6RWG3jWv9JCHClt" title="Tráiler Temporada 4" frameborder="0" allowfullscreen></iframe>
+              </div>
+              
+            </div>
+            <a class="carousel-control-prev" href="#trailerCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#trailerCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Personajes (mueve esta sección aquí) -->
+        <section id="characters" class="my-5">
+            <h2>Personajes</h2>
+            <div class="row">
+                <div class="col-sm-6 col-md-3 mb-4">
+                    <div class="card character-card">
+                        <img src="assets/img/homelander.jpg" class="card-img-top character-img" alt="Homelander">
+                        <div class="card-body">
+                            <h5 class="card-title">Homelander</h5>
+                            <p class="card-text">El "héroe" más patriótico... y psicópata. ¿Quién necesita enemigos con amigos así?</p>
+                            <button class="btn btn-dark btn-info-character">Más info</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repite para otros personajes -->
+            </div>
+        </section>
+
+        <!-- Spoiler Banner -->
+        <section id="spoiler-banner" class="alert alert-warning text-center d-none">
+          <strong>¡Alerta de Spoiler!</strong> Esta sección contiene momentos destacados. ¿Deseas continuar?
+          <button id="continue-spoiler" class="btn btn-danger ml-2">Sí, continuar</button>
+        </section>
+
+        <!-- Clips Destacados (carrusel Bootstrap) -->
+        <section id="highlights" class="my-5 d-none">
+          <h2>Momentos Destacados</h2>
+          <div id="highlight-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/img/clip1.jpg" class="d-block w-100" alt="Clip 1">
+                <div class="carousel-caption d-none d-md-block">
+                  <p>Homelander en modo psycho...</p>
+                </div>
+              </div>
+              <!-- Más clips -->
+            </div>
+            <a class="carousel-control-prev" href="#highlight-carousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#highlight-carousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Sección 3: Calendario y cuenta regresiva -->
+        <section id="calendar" class="my-5 text-center">
+          <h2>Próxima Temporada</h2>
+          <div id="countdown" class="countdown-bloody"></div>
+          <p>
+            <strong>Aproximado:</strong> La quinta temporada de The Boys llegará en algún momento de <span id="release-year">2026</span>.<br>
+            (Fecha exacta aún no confirmada por Amazon Prime Video)
+          </p>
+        </section>
+
+        <!-- Sección 4: Formulario de contacto validado -->
+        <section id="contact" class="my-5">
+            <h2>Contacto</h2>
+            <form id="contactForm" class="needs-validation" novalidate>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" id="name" required>
+                        <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email">Correo</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">Correo inválido.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea class="form-control" id="message" rows="3" required></textarea>
+                    <div class="invalid-feedback">Por favor ingresa un mensaje.</div>
+                </div>
+                <button class="btn btn-danger" type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer institucional -->
+    <footer class="bg-dark text-white text-center py-3">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-3 mb-2 mb-md-0">
+        <img src="assets/img/footer-logo.png" alt="Footer Logo" style="height:40px;">
+      </div>
+      <div class="col-md-3">
+        <p>
+          <a href="#" class="text-light mx-2"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-light mx-2"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-light mx-2"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="text-light mx-2"><i class="fab fa-instagram"></i></a>
+        </p>
+      </div>
+      <div class="col-md-3">
+        <p>Dirección: Av. Ficticia 123, Ciudad<br>Contacto: contacto@theboys.com</p>
+      </div>
+      <div class="col-md-3">
+        <p>
+          <strong>Dónde ver:</strong><br>
+          <a href="https://primevideo.com" target="_blank" class="btn btn-danger btn-sm my-1">Prime Video</a>
+          <br>
+          <strong>Temporadas:</strong>
+          <ul class="list-unstyled">
+            <li>Temporada 1</li>
+            <li>Temporada 2</li>
+            <li>Temporada 3</li>
+            <li>Temporada 4</li>
+          </ul>
+          <strong>Spin Off:</strong>
+          <ul class="list-unstyled">
+            <li>Gen V</li>
+            <li>The Boys: Diabolical</li>
+            <li>Vought Rising</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <a href="#">Términos de uso</a> |
+        <a href="#">Política de privacidad</a> |
+        <a href="#">Aviso de cookies</a>
+      </div>
+    </div>
+    <p class="mt-3">&copy; 2025 The Boys. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    // Bootstrap validation
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  $('#trailerCarousel').on('slide.bs.carousel', function (e) {
+    // Encuentra el iframe del slide activo y pausa el video
+    var $activeSlide = $(this).find('.carousel-item.active');
+    var $iframe = $activeSlide.find('iframe');
+    if ($iframe.length) {
+      // Pausa el video usando el postMessage API de YouTube
+      $iframe[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    }
+  });
+});
+</script>
+</body>
+</html>

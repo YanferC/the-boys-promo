@@ -1,0 +1,134 @@
+/* Paleta dorado suave */
+:root {
+    --gold-main: #C9B037;
+    --gold-hover: #B6862C;
+    --gold-shadow: #B6862C99;
+    --red-main: #dc3545;
+    --black-main: #222;
+}
+
+/* Fondo principal */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, var(--black-main) 60%, var(--red-main) 100%);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar y Footer */
+.navbar, .footer {
+    background-color: var(--black-main) !important;
+    border-bottom: 3px solid var(--gold-main);
+}
+
+/* Títulos dorados suaves */
+h1, h2, h3, .navbar-brand {
+    color: var(--gold-main) !important;
+    text-shadow: 1px 1px 8px var(--red-main);
+}
+
+/* Cards de personajes */
+.card {
+    margin: 15px;
+    background: var(--black-main);
+    border: 2px solid var(--gold-main);
+    color: #fff;
+    box-shadow: 0 2px 12px var(--gold-shadow);
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+.card:hover {
+    box-shadow: 0 6px 24px var(--gold-shadow);
+    border-color: var(--gold-hover);
+}
+
+/* Botones principales */
+.btn-danger, .btn-dark {
+    background: linear-gradient(90deg, var(--red-main) 60%, var(--gold-main) 100%);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 2px 8px var(--gold-shadow);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.btn-danger:hover, .btn-dark:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 16px var(--gold-shadow);
+    background: linear-gradient(90deg, var(--red-main) 40%, var(--gold-hover) 100%);
+    color: var(--black-main);
+}
+
+/* Animación grotesca para imágenes de personajes */
+.character-img {
+    transition: transform 0.3s, filter 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+.character-img.grotesque {
+    transform: rotate(-10deg) scale(1.1);
+    filter: grayscale(80%) blur(2px) brightness(0.7);
+    box-shadow: 0 0 30px var(--red-main), 0 0 10px var(--gold-main);
+    border: 2px solid var(--gold-main);
+}
+
+/* Calendario */
+.table-bordered {
+    border: 2px solid var(--gold-main) !important;
+}
+.table th, .table td {
+    border: 1px solid var(--gold-main) !important;
+    color: var(--gold-main);
+    background: var(--black-main);
+}
+
+/* Cuenta regresiva sangrienta */
+.countdown-bloody {
+    font-size: 2em;
+    color: var(--gold-main);
+    text-shadow: 2px 2px 8px var(--red-main), 0 0 10px var(--gold-hover);
+    font-weight: bold;
+}
+
+/* Spoiler banner */
+#spoiler-banner {
+    background: linear-gradient(90deg, var(--red-main) 60%, var(--gold-main) 100%);
+    color: var(--black-main);
+    font-weight: bold;
+    border: 2px solid var(--gold-main);
+}
+
+/* Animación de menú */
+.menu-hover {
+    background-color: var(--gold-hover) !important;
+    color: var(--black-main) !important;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+/* Sinopsis animada */
+.sinopsis-text {
+    animation: fadeInText 2s ease-in;
+    color: var(--gold-main);
+    text-shadow: 1px 1px 8px var(--red-main);
+}
+@keyframes fadeInText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Modal de edad */
+#age-modal .modal-content {
+    border: 3px solid var(--gold-main);
+    background: var(--black-main);
+    color: var(--gold-main);
+    box-shadow: 0 0 20px var(--red-main);
+}
+
+/* Footer imagen */
+footer img {
+    border: 2px solid var(--gold-main);
+    border-radius: 8px;
+}
+
+main {
+    margin-top: 60px; /* Ajusta según la altura real del navbar */
+}
