@@ -212,7 +212,7 @@ main {
     border-radius: 10px;
     overflow: hidden;
     background: #111;
-    box-shadow: 0 0 10px var(--gold-main, #C9B037, 0.2);
+    box-shadow: 0 0 10px var(--gold-main, #c1c0be, 0.2);
 }
 
 /* Imágenes superpuestas */
