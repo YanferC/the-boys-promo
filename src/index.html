@@ -94,7 +94,6 @@
           <li data-target="#trailerCarousel" data-slide-to="1"></li>
           <li data-target="#trailerCarousel" data-slide-to="2"></li>
           <li data-target="#trailerCarousel" data-slide-to="3"></li>
-          <li data-target="#trailerCarousel" data-slide-to="4"></li>
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active text-center">
@@ -175,6 +174,34 @@
             </div>
           </div>
         </div>
+        <div class="actor-card">
+          <div class="actor-image-container">
+            <img src="assets/img/actor_hughie.jpeg" alt="Jack Quaid" class="actor-normal">
+            <img src="assets/img/hughie.jpg" alt="Hughie" class="actor-character">
+          </div>
+          <div class="actor-info">
+            <h3 class="actor-name">Jack Quaid</h3>
+            <div class="character-info">
+              <span class="character-name">Hughie Campbell</span>
+              <p class="character-desc">El chico común que se mete en un lío de superhéroes. Idealista, torpe y sorprendentemente valiente.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="actor-card">
+          <div class="actor-image-container">
+            <img src="assets/img/actriz_starlight.jpg" alt="Erin Moriarty" class="actor-normal">
+            <img src="assets/img/starlight.png" alt="Starlight" class="actor-character">
+          </div>
+          <div class="actor-info">
+            <h3 class="actor-name">Erin Moriarty</h3>
+            <div class="character-info">
+              <span class="character-name">Starlight</span>
+              <p class="character-desc">La heroína con poderes eléctricos y un corazón de oro... que a veces chispea de rabia.
+              </p>
+            </div>
+          </div>
+        </div>
         <!-- Agrega más actor-card según necesites -->
       </div>
     </section>
@@ -188,15 +215,88 @@
     <!-- Clips Destacados (carrusel Bootstrap) -->
     <section id="highlights" class="my-5 d-none">
       <h2>Momentos Destacados</h2>
-      <div id="highlight-carousel" class="carousel slide" data-ride="carousel">
+      <div id="highlight-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <ol class="carousel-indicators">
+          <li data-target="#highlight-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#highlight-carousel" data-slide-to="1"></li>
+          <li data-target="#highlight-carousel" data-slide-to="2"></li>
+          <li data-target="#highlight-carousel" data-slide-to="3"></li>
+          <li data-target="#highlight-carousel" data-slide-to="4"></li>
+          <li data-target="#highlight-carousel" data-slide-to="5"></li>
+        </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/img/clip1.png" class="d-block w-100" alt="Clip 1">
+          <!-- Escena 1 -->
+          <div class="carousel-item active text-center">
+            <h3 class="mb-3">Escena 1</h3>
+            <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
+              <iframe class="embed-responsive-item"
+                src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=0&end=23&autoplay=0&controls=1"
+                title="Escena 1" allowfullscreen></iframe>
+            </div>
             <div class="carousel-caption d-none d-md-block">
-              <p>Homelander en modo psycho...</p>
+              <p>Inicio impactante de la temporada.</p>
             </div>
           </div>
-          <!-- Más clips -->
+          <!-- Escena 2 -->
+          <div class="carousel-item text-center">
+            <h3 class="mb-3">Escena 2</h3>
+            <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
+              <iframe class="embed-responsive-item"
+                src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=430&end=545&autoplay=0&controls=1"
+                title="Escena 2" allowfullscreen></iframe>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <p>Un momento clave y sangriento.</p>
+            </div>
+          </div>
+          <!-- Escena 3 -->
+          <div class="carousel-item text-center">
+            <h3 class="mb-3">Escena 3</h3>
+            <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
+            <iframe class="embed-responsive-item"
+              src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=31&end=270&autoplay=0&controls=1"
+              title="Escena 3" allowfullscreen></iframe>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <p>La tensión sube al máximo.</p>
+            </div>
+          </div>
+          <!-- Escena 4 -->
+          <div class="carousel-item text-center">
+            <h3 class="mb-3">Escena 4</h3>
+            <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
+            <iframe class="embed-responsive-item"
+              src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=271&end=295&autoplay=0&controls=1"
+              title="Escena 4" allowfullscreen></iframe>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <p>Un giro inesperado.</p>
+            </div>
+          </div>
+          <!-- Escena 5 -->
+          <div class="carousel-item text-center">
+            <h3 class="mb-3">Escena 5</h3>
+            <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
+            <iframe class="embed-responsive-item"
+              src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=296&end=322&autoplay=0&controls=1"
+              title="Escena 5" allowfullscreen></iframe>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <p>Acción y caos al estilo The Boys.</p>
+            </div>
+          </div>
+          <!-- Escena 6 -->
+          <div class="carousel-item text-center">
+            <h3 class="mb-3">Escena 6</h3>
+            <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
+            <iframe class="embed-responsive-item"
+              src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=400&end=428&autoplay=0&controls=1"
+              title="Escena 6" allowfullscreen></iframe>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+              <p>Un cierre brutal para el recuerdo.</p>
+            </div>
+          </div>
         </div>
         <a class="carousel-control-prev" href="#highlight-carousel" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon"></span>

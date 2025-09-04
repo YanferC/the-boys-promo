@@ -1,55 +1,49 @@
 // filepath: the-boys-promo/the-boys-promo/src/assets/js/main.js
 
+// JavaScript para la página promocional de The boys"
 document.addEventListener('DOMContentLoaded', function() {
     // Restricción de edad
-    const ageModal = document.getElementById('age-modal');
-    document.getElementById('age-yes').onclick = function() {
-        document.getElementById('age-modal').style.display = 'none';
+    const ageModal = document.getElementById('age-modal'); // Mostrar el modal al cargar la página obteniendo el id del modal
+    document.getElementById('age-yes').onclick = function() { // Si el usuario confirma que es mayor de edad, se cierra el modal
+        document.getElementById('age-modal').style.display = 'none'; // Ocultar el modal
     };
-    document.getElementById('age-no').onclick = function() {
-        window.location.href = 'https://www.google.com';
+    document.getElementById('age-no').onclick = function() { // Si el usuario confirma que no es mayor de edad, se redirige a otra página
+        window.location.href = 'https://www.google.com'; // Redirigir a Google u otra página segura
     };
 
     // Spoiler banner
-    const spoilerBanner = document.getElementById('spoiler-banner');
-    const highlights = document.getElementById('highlights');
-    spoilerBanner.classList.remove('d-none');
-    document.getElementById('continue-spoiler').onclick = function() {
-        spoilerBanner.classList.add('d-none');
-        highlights.classList.remove('d-none');
+    const spoilerBanner = document.getElementById('spoiler-banner'); // Mostrar el banner de spoiler
+    const highlights = document.getElementById('highlights'); // Contenido con spoilers que saldrá oculto 
+                                                            //  inicialmente aquí obtenemos el id del contenido
+    spoilerBanner.classList.remove('d-none'); 
+    document.getElementById('continue-spoiler').onclick = function() { // Si el usuario decide continuar, se oculta el banner y se muestra el contenido
+        spoilerBanner.classList.add('d-none'); // Ocultar el banner
+        highlights.classList.remove('d-none'); // Mostrar el contenido con spoilers
     };
 
     // Cuenta regresiva sangrienta
-    const countdown = document.getElementById('countdown');
+    const countdown = document.getElementById('countdown'); // Contenedor de la cuenta regresiva obteniendo el id del contenedor
     const releaseDate = new Date('2026-07-01'); // Fecha estimada para la cuenta regresiva
-    function updateCountdown() {
-        const now = new Date();
-        const diff = releaseDate - now;
-        if (diff <= 0) {
-            countdown.textContent = "¡Ya salió la nueva temporada!";
+    function updateCountdown() { // Actualizar la cuenta regresiva cada segundo
+        const now = new Date(); // Fecha y hora actual
+        const diff = releaseDate - now; // Diferencia en milisegundos entre la fecha de lanzamiento y la actual
+        if (diff <= 0) { // Si la fecha ya pasó, mostrar mensaje final
+            countdown.textContent = "¡Ya salió la nueva temporada!"; 
             return;
         }
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const mins = Math.floor((diff / (1000 * 60)) % 60);
-        const secs = Math.floor((diff / 1000) % 60);
-        countdown.textContent = `${days}d ${hours}h ${mins}m ${secs}s`;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24)); // Calcular días, horas, minutos y segundos restantes
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24); // Usar módulo para horas, minutos y segundos
+        const mins = Math.floor((diff / (1000 * 60)) % 60); // para mantenerlos en su rango
+        const secs = Math.floor((diff / 1000) % 60); 
+        countdown.textContent = `${days}d ${hours}h ${mins}m ${secs}s`; // Actualizar el texto de la cuenta regresiva
     }
-    setInterval(updateCountdown, 1000);
+    setInterval(updateCountdown, 1000); // Llamar a la función cada segundo para actualizar la cuenta regresiva
 
-    // Animaciones de personajes
-    document.querySelectorAll('.character-img').forEach(img => {
-        img.addEventListener('mouseenter', () => {
-            img.classList.add('grotesque');
-        });
-        img.addEventListener('mouseleave', () => {
-            img.classList.remove('grotesque');
-        });
-    });
+   
 
     // Animación de menú
-    document.querySelectorAll('.dropdown-item').forEach(item => {
-        item.addEventListener('mouseenter', () => {
+    document.querySelectorAll('.dropdown-item').forEach(item => { // Agregar eventos de hover a los elementos del menú desplegable
+        item.addEventListener('mouseenter', () => { // Al pasar el mouse, agregar clase para animación
             item.classList.add('menu-hover');
         });
         item.addEventListener('mouseleave', () => {
@@ -57,22 +51,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Event listener for a button click to show more information about "The Boys"
-    const showMoreButton = document.getElementById('show-more');
-    const moreInfoSection = document.getElementById('more-info');
-
-    showMoreButton.addEventListener('click', function() {
-        moreInfoSection.classList.toggle('d-none');
-        showMoreButton.textContent = moreInfoSection.classList.contains('d-none') ? 'Show More' : 'Show Less';
-    });
-
-    // Dynamic content update example
-    const updateContentButton = document.getElementById('update-content');
-    const contentArea = document.getElementById('content-area');
-
-    updateContentButton.addEventListener('click', function() {
-        contentArea.innerHTML = '<p>New content about "The Boys" has been loaded!</p>';
-    });
-
-    // Additional interactive features can be added here
 });

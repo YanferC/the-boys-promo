@@ -228,16 +228,16 @@ main {
 
 /* Estado inicial */
 .actor-normal {
-    opacity: 1;
-    z-index: 2;
+    opacity: 1; /* Imagen normal visible */
+    z-index: 2; /* Encima de la de personaje */
 }
 
 /* Imagen de personaje inicialmente oculta y con efecto */
 .actor-character {
-    opacity: 0;
-    z-index: 1;
-    transform: scale(1.1) rotate(-2deg);
-    filter: grayscale(60%) contrast(1.2);
+    opacity: 0; /* Imagen de personaje oculta */
+    z-index: 1; /* Debajo de la normal */
+    transform: scale(1.1) rotate(-2deg); /* Ligera escala y rotación */
+    filter: grayscale(60%) contrast(1.2); /* Efecto visual */
 }
 
 /* Efecto "romper" al hacer hover */
@@ -248,7 +248,7 @@ main {
 }
 /* Efecto "revelar" al hacer hover */
 .actor-card:hover .actor-character {
-    opacity: 1;
+    opacity: 1; /* Imagen de personaje visible y cambia la del actor a 0*/
     transform: scale(1) rotate(0deg);
     filter: none;
     border-color: var(--red-main, #dc3545);
