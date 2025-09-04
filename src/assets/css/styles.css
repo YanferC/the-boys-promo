@@ -132,3 +132,22 @@ footer img {
 main {
     margin-top: 60px; /* Ajusta según la altura real del navbar */
 }
+
+/* Cambia el color de los labels y el texto de los inputs en el formulario de contacto */
+#contact label {
+    color: var(--gold-main);
+    font-weight: bold;
+}
+
+#contact .form-control {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid var(--gold-main);
+}
+
+#contact .form-control:focus {
+    background-color: #222;
+    color: #fff;
+    border-color: var(--gold-hover);
+    box-shadow: 0 0 0 0.2rem rgba(201,176,55,0.25);
+}
