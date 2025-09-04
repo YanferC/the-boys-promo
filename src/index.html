@@ -155,6 +155,49 @@
       </div>
     </section>
 
+    <!-- Carrusel de actores y personajes -->
+    <section class="carousel my-5" id="characters"> <!-- clase padre carousel es el contenedor grande aquí 
+                                                        se puede agrandar el tamaño de la sección de personajes-->
+      <h2>Reparto</h2>
+      <div class="carousel-container"> <!-- contenedor de las tarjetas dónde estarán las imagenes y texto-->
+        <!-- Ejemplo: Homelander -->
+        <div class="actor-card"> <!-- clase actor-card es la tarjeta individual que contiene la imagen y el texto -->
+          <div class="actor-image-container"> <!-- contenedor de las imágenes, aquí van las dos imágenes 
+                                                                la del actor y la del personaje -->
+            <img src="assets/img/actor_homelander.jpg" alt="Antony Starr" class="actor-normal"> <!-- imagen del actor pero esta contiene la clase
+                                                                                                actor-normal que es la que sale de primera y al hacer hover
+                                                                                                cambiar a la imagen del personaje, redirigirse a la clse css -->
+            <img src="assets/img/homelander.png" alt="Homelander" class="actor-character"> <!-- imagen del personaje con la clase actor-character que es la que
+                                                                                              aparece al hacer hover en la tarjeta -->
+          </div>
+          <div class="actor-info"> <!-- contenedor del texto, aquí va el nombre del actor y la info del personaje -->
+            <h3 class="actor-name">Antony Starr</h3> <!-- nombre del actor que lo mismo que las imagenes sale primero gracias a la clase css actor-name-->
+            <div class="character-info">  <!-- contenedor de la info del personaje, aquí va el nombre del personaje y la descripción -->
+              <span class="character-name">Homelander</span> <!-- nombre del personaje el cual aparece cuando se hace hover-->
+              <p class="character-desc">El "héroe" más patriótico... y psicópata. ¿Quién necesita enemigos con amigos así?
+              </p> <!-- descripción del personaje que aparece cuando se hace hover, redirigirse al css para ver el efecto-->
+            </div>
+          </div>
+        </div>
+        <!-- Repite para otros actores/personajes -->
+        <div class="actor-card">
+          <div class="actor-image-container">
+            <img src="assets/img/actor_butcher.jpg" alt="Karl Urban" class="actor-normal">
+            <img src="assets/img/butcher.jpg" alt="Billy Butcher" class="actor-character">
+          </div>
+          <div class="actor-info">
+            <h3 class="actor-name">Karl Urban</h3>
+            <div class="character-info">
+              <span class="character-name">Billy Butcher</span>
+              <p class="character-desc">El tipo que odia a los supers más que a su suegra. Sarcasmo y venganza en estado puro.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Agrega más actor-card según necesites -->
+      </div>
+    </section>
+
     <!-- Spoiler Banner -->
     <section id="spoiler-banner" class="alert alert-warning text-center d-none">
       <strong>¡Alerta de Spoiler!</strong> Esta sección contiene momentos destacados. ¿Deseas continuar?
