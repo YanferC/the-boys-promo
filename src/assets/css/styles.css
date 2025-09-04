@@ -151,3 +151,157 @@ main {
     border-color: var(--gold-hover);
     box-shadow: 0 0 0 0.2rem rgba(201,176,55,0.25);
 }
+
+/* Carrusel de actores adaptado para The Boys */
+/* Estilos para el carrusel de actores */
+.carousel {
+    padding: 20px;
+    background: rgba(34, 34, 34, 0.7);
+    margin: 20px 0;
+    border-radius: 10px;
+    border: 2px solid var(--red-main, #dc3545);
+}
+
+/* Título del carrusel */
+.carousel h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--gold-main);
+    text-shadow: 1px 1px 8px var(--red-main);
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    justify-content: center;
+}
+
+/* Tarjetas de actores */
+.actor-card {
+    flex-shrink: 0;
+    background: rgba(34, 34, 34, 0.95);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid var(--gold-main, #C9B037);
+    transition: all 0.3s ease;
+    max-width: 240px; /* o el valor que prefieras */
+    min-width: 200px;
+    word-break: break-word;
+    white-space: normal;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto hover en la tarjeta */
+.actor-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    border-color: var(--red-main, #dc3545);
+    box-shadow: 0 8px 24px var(--red-main, #dc3545, 0.4);
+}
+
+/* Contenedor de imágenes */
+.actor-image-container {
+    position: relative;
+    width: 170px;
+    height: 210px;
+    margin: 0 auto 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #111;
+    box-shadow: 0 0 10px var(--gold-main, #C9B037, 0.2);
+}
+
+/* Imágenes superpuestas */
+.actor-normal, .actor-character {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid rgba(255,255,255,0.15);
+    transition: all 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+/* Estado inicial */
+.actor-normal {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Imagen de personaje inicialmente oculta y con efecto */
+.actor-character {
+    opacity: 0;
+    z-index: 1;
+    transform: scale(1.1) rotate(-2deg);
+    filter: grayscale(60%) contrast(1.2);
+}
+
+/* Efecto "romper" al hacer hover */
+.actor-card:hover .actor-normal {
+    opacity: 0;
+    transform: scale(0.8) rotate(8deg);
+    filter: blur(2px) brightness(0.7);
+}
+/* Efecto "revelar" al hacer hover */
+.actor-card:hover .actor-character {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: none;
+    border-color: var(--red-main, #dc3545);
+    box-shadow: 0 0 20px var(--red-main, #dc3545, 0.6);
+}
+
+/* Sombra intensa al hacer hover en el contenedor */
+.actor-card:hover .actor-image-container {
+    box-shadow: 0 0 24px var(--red-main, #dc3545, 0.7);
+}
+
+/* Info de actor/personaje */
+.actor-info {
+    min-height: 90px;
+}
+
+.actor-name {
+    color: var(--gold-main, #C9B037);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+.character-info {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+
+.actor-card:hover .actor-name {
+    color: var(--red-main, #dc3545);
+}
+
+/* Mostrar info del personaje al hacer hover */
+.actor-card:hover .character-info {
+    opacity: 1;
+    max-height: 200px;
+    margin-top: 0.5rem;
+}
+
+.character-name {
+    display: block;
+    color: var(--gold-main, #C9B037);
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+
+.character-desc {
+    color: #fff;
+    font-size: 0.95rem;
+    margin: 0;
+    font-style: italic;
+    text-shadow: 1px 1px 6px #111;
+}
