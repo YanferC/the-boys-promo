@@ -14,6 +14,7 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* Navbar y Footer */
@@ -176,7 +177,7 @@ main {
     overflow-x: auto;
     gap: 20px;
     padding: 10px;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 /* Tarjetas de actores */
@@ -304,4 +305,54 @@ main {
     margin: 0;
     font-style: italic;
     text-shadow: 1px 1px 6px #111;
+}
+
+/* Estilos para las tarjetas de reseñas */
+.review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    max-width: 240px;
+    min-width: 200px;
+    background: rgba(34, 34, 34, 0.95);
+    border-radius: 15px;
+    border: 2px solid var(--gold-main, #C9B037);
+    box-shadow: 0 4px 10px var(--red-main, #dc3545, 0.2);
+    margin-bottom: 10px;
+}
+
+.review-title {
+    font-size: 1.1em;
+}
+
+.review-text {
+    font-size: 1em;
+    margin-bottom: 0;
+    word-break: break-word;
+}
+
+.review-footer {
+    border-top: 1px solid var(--gold-main, #C9B037);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-stars {
+    margin-bottom: 0.5em;
+}
+
+.review-meta {
+    margin-bottom: 0;
+}
+
+img.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    scroll-margin-top: 80px; /* Ajusta según la altura de tu navbar */
 }
