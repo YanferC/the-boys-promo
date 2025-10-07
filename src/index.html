@@ -58,7 +58,27 @@
           <li class="nav-item"><a class="nav-link" href="#synopsis">Sinopsis</a></li>
           <li class="nav-item"><a class="nav-link" href="#characters">Personajes</a></li>
           <li class="nav-item"><a class="nav-link" href="#calendar">Calendario</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+          <button class="open-modal-btn btn btn-outline-light">Enviar sugerencia</button>
+          <div id="sugerencia-modal" class="custom-modal">
+            <div class="custom-modal-content">
+              <span class="close-btn">&times;</span>
+              <h2>Envíanos tu sugerencia</h2>
+              <form id="sugerencia-form">
+                <label for="sugerencia-nombre">Nombre:</label>
+                <input type="text" id="sugerencia-nombre" placeholder="Tu nombre" required>
+
+                <label for="sugerencia-correo">Correo:</label>
+                <input type="email" id="sugerencia-correo" placeholder="tucorreo@ejemplo.com" required>
+
+                <label for="sugerencia-texto">Tu sugerencia:</label>
+                <textarea id="sugerencia-texto" rows="4" placeholder="Escribe aquí tu idea..." required></textarea>
+
+                <label for="miArchivo" class="btn btn-warning">Seleccionar archivo</label>
+                
+                <button type="submit" class="btn btn-danger ml-2" class="submit-btn">Enviar sugerencia</button>
+              </form>
+            </div>
+          </div>
         </ul>
       </div>
     </nav>
@@ -113,15 +133,15 @@
           <div class="carousel-item text-center">
             <h3 class="mb-3">Temporada 3</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/elTgqUW-NYE?si=1pRb7xDJLCRE5vXk"
-              title="Tráiler Temporada 3" allowfullscreen></iframe>
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/elTgqUW-NYE?si=1pRb7xDJLCRE5vXk"
+                title="Tráiler Temporada 3" allowfullscreen></iframe>
             </div>
           </div>
           <div class="carousel-item text-center">
             <h3 class="mb-3">Temporada 4</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RzDdLdM59kw?si=Y6RWG3jWv9JCHClt"
-              title="Tráiler Temporada 4" frameborder="0" allowfullscreen></iframe>
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RzDdLdM59kw?si=Y6RWG3jWv9JCHClt"
+                title="Tráiler Temporada 4" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
 
@@ -144,18 +164,25 @@
         <div class="actor-card"> <!-- clase actor-card es la tarjeta individual que contiene la imagen y el texto -->
           <div class="actor-image-container"> <!-- contenedor de las imágenes, aquí van las dos imágenes 
                                                                 la del actor y la del personaje -->
-            <img src="assets/img/actor_homelander.jpg" alt="Antony Starr" class="actor-normal"> <!-- imagen del actor pero esta contiene la clase
+            <img src="assets/img/actor_homelander.jpg" alt="Antony Starr" class="actor-normal">
+            <!-- imagen del actor pero esta contiene la clase
                                                                                                 actor-normal que es la que sale de primera y al hacer hover
                                                                                                 cambiar a la imagen del personaje, redirigirse a la clse css -->
-            <img src="assets/img/homelander.png" alt="Homelander" class="actor-character"> <!-- imagen del personaje con la clase actor-character que es la que
+            <img src="assets/img/homelander.png" alt="Homelander" class="actor-character">
+            <!-- imagen del personaje con la clase actor-character que es la que
                                                                                               aparece al hacer hover en la tarjeta -->
           </div>
           <div class="actor-info"> <!-- contenedor del texto, aquí va el nombre del actor y la info del personaje -->
-            <h3 class="actor-name">Antony Starr</h3> <!-- nombre del actor que lo mismo que las imagenes sale primero gracias a la clase css actor-name-->
-            <div class="character-info">  <!-- contenedor de la info del personaje, aquí va el nombre del personaje y la descripción -->
-              <span class="character-name">Homelander</span> <!-- nombre del personaje el cual aparece cuando se hace hover-->
-              <p class="character-desc">El "héroe" más patriótico... y psicópata. ¿Quién necesita enemigos con amigos así?
-              </p> <!-- descripción del personaje que aparece cuando se hace hover, redirigirse al css para ver el efecto-->
+            <h3 class="actor-name">Antony Starr</h3>
+            <!-- nombre del actor que lo mismo que las imagenes sale primero gracias a la clase css actor-name-->
+            <div class="character-info">
+              <!-- contenedor de la info del personaje, aquí va el nombre del personaje y la descripción -->
+              <span class="character-name">Homelander</span>
+              <!-- nombre del personaje el cual aparece cuando se hace hover-->
+              <p class="character-desc">El "héroe" más patriótico... y psicópata. ¿Quién necesita enemigos con amigos
+                así?
+              </p>
+              <!-- descripción del personaje que aparece cuando se hace hover, redirigirse al css para ver el efecto-->
             </div>
           </div>
         </div>
@@ -169,7 +196,8 @@
             <h3 class="actor-name">Karl Urban</h3>
             <div class="character-info">
               <span class="character-name">Billy Butcher</span>
-              <p class="character-desc">El tipo que odia a los supers más que a su suegra. Sarcasmo y venganza en estado puro.
+              <p class="character-desc">El tipo que odia a los supers más que a su suegra. Sarcasmo y venganza en estado
+                puro.
               </p>
             </div>
           </div>
@@ -183,7 +211,8 @@
             <h3 class="actor-name">Jack Quaid</h3>
             <div class="character-info">
               <span class="character-name">Hughie Campbell</span>
-              <p class="character-desc">El chico común que se mete en un lío de superhéroes. Idealista, torpe y sorprendentemente valiente.
+              <p class="character-desc">El chico común que se mete en un lío de superhéroes. Idealista, torpe y
+                sorprendentemente valiente.
               </p>
             </div>
           </div>
@@ -197,7 +226,8 @@
             <h3 class="actor-name">Erin Moriarty</h3>
             <div class="character-info">
               <span class="character-name">Starlight</span>
-              <p class="character-desc">La heroína con poderes eléctricos y un corazón de oro... que a veces chispea de rabia.
+              <p class="character-desc">La heroína con poderes eléctricos y un corazón de oro... que a veces chispea de
+                rabia.
               </p>
             </div>
           </div>
@@ -230,8 +260,8 @@
             <h3 class="mb-3">Escena 1</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
               <iframe class="embed-responsive-item"
-                src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=0&end=23&autoplay=0&controls=1"
-                title="Escena 1" allowfullscreen></iframe>
+                src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=0&end=23&autoplay=0&controls=1" title="Escena 1"
+                allowfullscreen></iframe>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <p>Inicio impactante de la temporada.</p>
@@ -242,8 +272,8 @@
             <h3 class="mb-3">Escena 2</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
               <iframe class="embed-responsive-item"
-                src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=430&end=545&autoplay=0&controls=1"
-                title="Escena 2" allowfullscreen></iframe>
+                src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=430&end=545&autoplay=0&controls=1" title="Escena 2"
+                allowfullscreen></iframe>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <p>Un momento clave y sangriento.</p>
@@ -253,9 +283,9 @@
           <div class="carousel-item text-center">
             <h3 class="mb-3">Escena 3</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
-            <iframe class="embed-responsive-item"
-              src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=31&end=270&autoplay=0&controls=1"
-              title="Escena 3" allowfullscreen></iframe>
+              <iframe class="embed-responsive-item"
+                src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=31&end=270&autoplay=0&controls=1" title="Escena 3"
+                allowfullscreen></iframe>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <p>La tensión sube al máximo.</p>
@@ -265,9 +295,9 @@
           <div class="carousel-item text-center">
             <h3 class="mb-3">Escena 4</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
-            <iframe class="embed-responsive-item"
-              src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=271&end=295&autoplay=0&controls=1"
-              title="Escena 4" allowfullscreen></iframe>
+              <iframe class="embed-responsive-item"
+                src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=271&end=295&autoplay=0&controls=1" title="Escena 4"
+                allowfullscreen></iframe>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <p>Un giro inesperado.</p>
@@ -277,9 +307,9 @@
           <div class="carousel-item text-center">
             <h3 class="mb-3">Escena 5</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
-            <iframe class="embed-responsive-item"
-              src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=296&end=322&autoplay=0&controls=1"
-              title="Escena 5" allowfullscreen></iframe>
+              <iframe class="embed-responsive-item"
+                src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=296&end=322&autoplay=0&controls=1" title="Escena 5"
+                allowfullscreen></iframe>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <p>Acción y caos al estilo The Boys.</p>
@@ -289,9 +319,9 @@
           <div class="carousel-item text-center">
             <h3 class="mb-3">Escena 6</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
-            <iframe class="embed-responsive-item"
-              src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=400&end=428&autoplay=0&controls=1"
-              title="Escena 6" allowfullscreen></iframe>
+              <iframe class="embed-responsive-item"
+                src="https://www.youtube.com/embed/OQoAfQ6pOl4?start=400&end=428&autoplay=0&controls=1" title="Escena 6"
+                allowfullscreen></iframe>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <p>Un cierre brutal para el recuerdo.</p>
@@ -316,31 +346,6 @@
           id="release-year">2026</span>.<br>
         (Fecha exacta aún no confirmada por Amazon Prime Video)
       </p>
-    </section>
-
-    <!-- Sección 4: Formulario de contacto validado -->
-    <section id="contact" class="my-5">
-      <h2>Contacto</h2>
-      <form id="contactForm" class="needs-validation" novalidate>
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="name">Nombre</label>
-            <input type="text" class="form-control" id="name" required>
-            <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="email">Correo</label>
-            <input type="email" class="form-control" id="email" required>
-            <div class="invalid-feedback">Correo inválido.</div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="message">Mensaje</label>
-          <textarea class="form-control" id="message" rows="3" required></textarea>
-          <div class="invalid-feedback">Por favor ingresa un mensaje.</div>
-        </div>
-        <button class="btn btn-danger" type="submit">Enviar</button>
-      </form>
     </section>
 
     <!-- Sección de Reseñas -->
@@ -489,63 +494,63 @@
   <footer id="footer">
     <div class="bg-dark text-white text-center py-3">
       <div class="row footer-links">
-      <!-- Columna The Boys -->
-      <div class="col-6 col-md pb-5 pb-md-0">
-        <p class="text-warning font-weight-bold t9 mb-3">The Boys</p>
-        <a class="sinopsis-text d-block">Temporada 1</a>
-        <a class="sinopsis-text d-block">Temporada 2</a>
-        <a class="sinopsis-text d-block">Temporada 3</a>
-        <a class="sinopsis-text d-block">Temporada 4</a>
-        <a class="sinopsis-text d-block">Spin-offs</a>
+        <!-- Columna The Boys -->
+        <div class="col-6 col-md pb-5 pb-md-0">
+          <p class="text-warning font-weight-bold t9 mb-3">The Boys</p>
+          <a class="sinopsis-text d-block">Temporada 1</a>
+          <a class="sinopsis-text d-block">Temporada 2</a>
+          <a class="sinopsis-text d-block">Temporada 3</a>
+          <a class="sinopsis-text d-block">Temporada 4</a>
+          <a class="sinopsis-text d-block">Spin-offs</a>
+        </div>
+
+        <!-- Columna Personajes -->
+        <div class="col-6 col-md pb-5 pb-md-0">
+          <p class="text-warning font-weight-bold t9 mb-3">Personajes</p>
+          <a class="sinopsis-text d-block" href="#">Billy Butcher</a>
+          <a class="sinopsis-text d-block" href="#">Hughie Campbell</a>
+          <a class="sinopsis-text d-block" href="#">Starlight</a>
+          <a class="sinopsis-text d-block" href="#">Homelander</a>
+          <a class="sinopsis-text d-block" href="#">Soldier Boy</a>
+        </div>
+
+        <!-- Columna Los Siete -->
+        <div class="col-6 col-md pb-5 pb-md-0">
+          <p class="text-warning font-weight-bold t9 mb-3">Los Siete</p>
+          <a class="sinopsis-text d-block" href="#">Homelander</a>
+          <a class="sinopsis-text d-block" href="#">Queen Maeve</a>
+          <a class="sinopsis-text d-block" href="#">A-Train</a>
+          <a class="sinopsis-text d-block" href="#">The Deep</a>
+          <a class="sinopsis-text d-block" href="#">Black Noir</a>
+        </div>
+
+        <!-- Columna Vought -->
+        <div class="col-6 col-md pb-5 pb-md-0">
+          <p class="text-warning font-weight-bold t9 mb-3">Vought</p>
+          <a class="sinopsis-text d-block" href="#">Historia de Vought</a>
+          <a class="sinopsis-text d-block" href="#">Compañías afiliadas</a>
+          <a class="sinopsis-text d-block" href="#">Laboratorios</a>
+          <a class="sinopsis-text d-block" href="#">Comercialización</a>
+          <a class="sinopsis-text d-block" href="#">Campañas</a>
+        </div>
+
+        <!-- Columna Extras -->
+        <div class="col-6 col-md pb-5 pb-md-0">
+          <p class="text-warning font-weight-bold t9 mb-3">Extras</p>
+          <a class="sinopsis-text d-block" href="#">Cómics originales</a>
+          <a class="sinopsis-text d-block" href="#">Noticias y eventos</a>
+          <a class="sinopsis-text d-block" href="#">Galería de imágenes</a>
+          <a class="sinopsis-text d-block" href="#">Entrevistas</a>
+          <a class="sinopsis-text d-block">Detrás de cámaras</a>
+        </div>
       </div>
 
-      <!-- Columna Personajes -->
-      <div class="col-6 col-md pb-5 pb-md-0">
-        <p class="text-warning font-weight-bold t9 mb-3">Personajes</p>
-        <a class="sinopsis-text d-block" href="#">Billy Butcher</a>
-        <a class="sinopsis-text d-block" href="#">Hughie Campbell</a>
-        <a class="sinopsis-text d-block" href="#">Starlight</a>
-        <a class="sinopsis-text d-block" href="#">Homelander</a>
-        <a class="sinopsis-text d-block" href="#">Soldier Boy</a>
-      </div>
-
-      <!-- Columna Los Siete -->
-      <div class="col-6 col-md pb-5 pb-md-0">
-        <p class="text-warning font-weight-bold t9 mb-3">Los Siete</p>
-        <a class="sinopsis-text d-block" href="#">Homelander</a>
-        <a class="sinopsis-text d-block" href="#">Queen Maeve</a>
-        <a class="sinopsis-text d-block" href="#">A-Train</a>
-        <a class="sinopsis-text d-block" href="#">The Deep</a>
-        <a class="sinopsis-text d-block" href="#">Black Noir</a>
-      </div>
-
-      <!-- Columna Vought -->
-      <div class="col-6 col-md pb-5 pb-md-0">
-        <p class="text-warning font-weight-bold t9 mb-3">Vought</p>
-        <a class="sinopsis-text d-block" href="#">Historia de Vought</a>
-        <a class="sinopsis-text d-block" href="#">Compañías afiliadas</a>
-        <a class="sinopsis-text d-block" href="#">Laboratorios</a>
-        <a class="sinopsis-text d-block" href="#">Comercialización</a>
-        <a class="sinopsis-text d-block" href="#">Campañas</a>
-      </div>
-
-      <!-- Columna Extras -->
-      <div class="col-6 col-md pb-5 pb-md-0">
-        <p class="text-warning font-weight-bold t9 mb-3">Extras</p>
-        <a class="sinopsis-text d-block" href="#">Cómics originales</a>
-        <a class="sinopsis-text d-block" href="#">Noticias y eventos</a>
-        <a class="sinopsis-text d-block" href="#">Galería de imágenes</a>
-        <a class="sinopsis-text d-block" href="#">Entrevistas</a>
-        <a class="sinopsis-text d-block">Detrás de cámaras</a>
-      </div>
-    </div>
-    
-        <!-- Boton para ver ahora - redirige a la pagina de Prime Video -->
-    <div class="container-xl">
-      <div class="row align-items-center">
-        <div class="col-12 col-lg text-center text-lg-left" data-section-category="Footer" >
-          <a href="https://www.primevideo.com/-/es/detail/The-Boys/0KRGHGZCHKS920ZQGY5LBRF7MA" target="_blank"> 
-            <button aria-label="Ver Serie" class="btn btn-danger">VER SERIE AHORA</button>
+      <!-- Boton para ver ahora - redirige a la pagina de Prime Video -->
+      <div class="container-xl">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg text-center text-lg-left" data-section-category="Footer">
+            <a href="https://www.primevideo.com/-/es/detail/The-Boys/0KRGHGZCHKS920ZQGY5LBRF7MA" target="_blank">
+              <button aria-label="Ver Serie" class="btn btn-danger">VER SERIE AHORA</button>
             </a>
           </div>
         </div>
@@ -557,44 +562,69 @@
         <div class="row align-items-lg-center">
           <div class="col-12 col-lg-5 col-md-6 footer-rrss row">
             <p class="m-0 d-block d-lg-none mb-4">Encuentra más contenido:</p>
-            <div class="py-1 d-flex align-items-center justify-content-sm-start justify-content-between" data-expand="0" style="overflow-x: hidden;" data-section-category="Footer">
+            <div class="py-1 d-flex align-items-center justify-content-sm-start justify-content-between" data-expand="0"
+              style="overflow-x: hidden;" data-section-category="Footer">
               <p class="m-0 d-none d-lg-block pr-3">Encuentra más contenido:</p>
-              <a aria-label="Facebook" href="https://web.facebook.com/TheBoysTV/?_rdc=1&_rdr#" class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
-                <img class=" lazyloaded" data-src="https://cdn.modyo.cloud/uploads/9bede2b0-2bb5-45f0-abb4-7a4db865c8a2/original/facebook.svg" alt="Facebook Icon" width="32" height="32" src="https://cdn.modyo.cloud/uploads/9bede2b0-2bb5-45f0-abb4-7a4db865c8a2/original/facebook.svg">
+              <a aria-label="Facebook" href="https://web.facebook.com/TheBoysTV/?_rdc=1&_rdr#"
+                class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
+                <img class=" lazyloaded"
+                  data-src="https://cdn.modyo.cloud/uploads/9bede2b0-2bb5-45f0-abb4-7a4db865c8a2/original/facebook.svg"
+                  alt="Facebook Icon" width="32" height="32"
+                  src="https://cdn.modyo.cloud/uploads/9bede2b0-2bb5-45f0-abb4-7a4db865c8a2/original/facebook.svg">
               </a>
-              <a aria-label="Instagram" href="https://www.instagram.com/theboystv/?hl=es" class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
-                <img class=" lazyloaded" data-src="https://cdn.modyo.cloud/uploads/22d6ea97-bedd-45be-928e-200d7a4335b7/original/instagram.svg" alt="Instagram icon" width="32" height="32" src="https://cdn.modyo.cloud/uploads/22d6ea97-bedd-45be-928e-200d7a4335b7/original/instagram.svg">
+              <a aria-label="Instagram" href="https://www.instagram.com/theboystv/?hl=es"
+                class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
+                <img class=" lazyloaded"
+                  data-src="https://cdn.modyo.cloud/uploads/22d6ea97-bedd-45be-928e-200d7a4335b7/original/instagram.svg"
+                  alt="Instagram icon" width="32" height="32"
+                  src="https://cdn.modyo.cloud/uploads/22d6ea97-bedd-45be-928e-200d7a4335b7/original/instagram.svg">
               </a>
-              <a aria-label="Twitter" href="https://x.com/TheBoysTV?" class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
-                <img class=" lazyloaded" data-src="https://cdn.modyo.cloud/uploads/2d0d72e1-a1e2-4e51-ba7e-406898502b88/original/X-icono.svg" alt="Twitter icon" width="32" height="32" src="https://cdn.modyo.cloud/uploads/2d0d72e1-a1e2-4e51-ba7e-406898502b88/original/X-icono.svg">
+              <a aria-label="Twitter" href="https://x.com/TheBoysTV?"
+                class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
+                <img class=" lazyloaded"
+                  data-src="https://cdn.modyo.cloud/uploads/2d0d72e1-a1e2-4e51-ba7e-406898502b88/original/X-icono.svg"
+                  alt="Twitter icon" width="32" height="32"
+                  src="https://cdn.modyo.cloud/uploads/2d0d72e1-a1e2-4e51-ba7e-406898502b88/original/X-icono.svg">
               </a>
-              <a aria-label="Youtube" href="https://www.youtube.com/@primevideolatinoamerica" class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
-                <img class=" lazyloaded" data-src="https://cdn.modyo.cloud/uploads/82fb78c2-bdca-4fc0-ac36-27bd3c96753b/original/youtube.svg" alt="Youtube Icon" width="32" height="32" src="https://cdn.modyo.cloud/uploads/82fb78c2-bdca-4fc0-ac36-27bd3c96753b/original/youtube.svg">
+              <a aria-label="Youtube" href="https://www.youtube.com/@primevideolatinoamerica"
+                class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
+                <img class=" lazyloaded"
+                  data-src="https://cdn.modyo.cloud/uploads/82fb78c2-bdca-4fc0-ac36-27bd3c96753b/original/youtube.svg"
+                  alt="Youtube Icon" width="32" height="32"
+                  src="https://cdn.modyo.cloud/uploads/82fb78c2-bdca-4fc0-ac36-27bd3c96753b/original/youtube.svg">
               </a>
-              <a aria-label="Tiktok" href="https://www.tiktok.com/@theboystv" class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
-                <img class=" lazyloaded" data-src="https://cdn.modyo.cloud/uploads/49dc5a84-d506-43c4-9551-9c09a137dd20/original/TIKTOK_Mesa_de_trabajo_1.svg" alt="Youtube Icon" width="32" height="32" src="https://cdn.modyo.cloud/uploads/49dc5a84-d506-43c4-9551-9c09a137dd20/original/TIKTOK_Mesa_de_trabajo_1.svg">
+              <a aria-label="Tiktok" href="https://www.tiktok.com/@theboystv"
+                class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
+                <img class=" lazyloaded"
+                  data-src="https://cdn.modyo.cloud/uploads/49dc5a84-d506-43c4-9551-9c09a137dd20/original/TIKTOK_Mesa_de_trabajo_1.svg"
+                  alt="Youtube Icon" width="32" height="32"
+                  src="https://cdn.modyo.cloud/uploads/49dc5a84-d506-43c4-9551-9c09a137dd20/original/TIKTOK_Mesa_de_trabajo_1.svg">
               </a>
             </div>
             <div class="pt-5">
               <p class="m-0 small text-white text-left">&copy; 2025 The Boys. Todos los derechos reservados.</p>
             </div>
           </div>
-          
+
           <!-- Enlace de la pagina principal de la productora -->
           <div class="col-12 col-lg-5 col-md-6 pt-4">
             <p class="m-0 d-block d-lg-none mb-4">Casa productora:</p>
             <div class="d-flex align-items-center gap-3">
               <p class="m-0 d-none d-lg-block pr-3">Casa productora:</p>
               <a href="https://www.primevideo.com/" target="_blank" rel="noopener noreferrer">
-                <img class="img-fluid d-block ls-is-cached lazyloaded" src="assets/img/logoPrime.png" src="https://cdn.modyo.cloud/uploads/719ec75f-ed5e-40e5-8d44-5851390ccc23/original/LOGO_REGISTRADO-BLANCO.png" width="120" height="120">
+                <img class="img-fluid d-block ls-is-cached lazyloaded" src="assets/img/logoPrime.png"
+                  src="https://cdn.modyo.cloud/uploads/719ec75f-ed5e-40e5-8d44-5851390ccc23/original/LOGO_REGISTRADO-BLANCO.png"
+                  width="120" height="120">
               </a>
               <div class="px-2">
                 <div style="width: 1px; height: 64px; background-color: white;"></div>
               </div>
-              <img class="img-fluid d-block ls-is-cached lazyloaded ml-2" src="assets/img/logo.png" data-src="https://cdn.modyo.cloud/uploads/df234fe5-0ab8-4343-8dd7-61acbb532786/original/LOGO_LA_MORADITA.png" height="150" width="150">
+              <img class="img-fluid d-block ls-is-cached lazyloaded ml-2" src="assets/img/logo.png"
+                data-src="https://cdn.modyo.cloud/uploads/df234fe5-0ab8-4343-8dd7-61acbb532786/original/LOGO_LA_MORADITA.png"
+                height="150" width="150">
             </div>
           </div>
-          
+
           <!-- Descargala en -->
           <div class="col-12 col-lg-2 col-md-12 pt-4">
             <p class="m-0 d-block d-lg-none mb-4">Descárgala en:</p>
@@ -602,15 +632,18 @@
               <p class="m-0 d-none d-lg-block pr-3 mb-3">Descárgala en:</p>
               <div class="d-flex gap-2">
                 <a href="https://apps.apple.com/es/app/amazon-prime-video/id545519333" target="_blank" rel="noopener">
-                  <img src="https://cdn.modyo.cloud/uploads/98970824-f09b-4a7e-b002-dcf2e734712b/original/AppStore.png" alt="Google Play" height="40" class="img-fluid">
+                  <img src="https://cdn.modyo.cloud/uploads/98970824-f09b-4a7e-b002-dcf2e734712b/original/AppStore.png"
+                    alt="Google Play" height="40" class="img-fluid">
                 </a>
-                <a href="https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient&hl=es_CO&pli=1" target="_blank" rel="noopener">
-                  <img src="https://cdn.modyo.cloud/uploads/a8408ea6-079f-4114-9df1-80e2246d54c5/original/PlayStore.png" alt="App Store" height="40" class="img-fluid">
+                <a href="https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient&hl=es_CO&pli=1"
+                  target="_blank" rel="noopener">
+                  <img src="https://cdn.modyo.cloud/uploads/a8408ea6-079f-4114-9df1-80e2246d54c5/original/PlayStore.png"
+                    alt="App Store" height="40" class="img-fluid">
                 </a>
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
