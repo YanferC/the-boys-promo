@@ -17,6 +17,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Navbar y Footer */
 .navbar,
 .footer {

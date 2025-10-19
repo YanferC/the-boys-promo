@@ -1,4 +1,4 @@
-// filepath: the-boys-promo/the-boys-promo/src/assets/js/main.js
+// filepath: c:\Users\YANFER\Downloads\the-boys-promo\src\assets\js\main.js
 
 // JavaScript para la página promocional de The boys"
 document.addEventListener('DOMContentLoaded', function () {
@@ -70,4 +70,29 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Manejar clicks en las temporadas del dropdown para saltar al carrusel
+    document.querySelectorAll('.season-link').forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            const slide = parseInt(this.getAttribute('data-slide-to'), 10) || 0;
+            // Usamos jQuery/Bootstrap carousel (main.js ahora se carga después de jQuery)
+            if (window.jQuery && jQuery('#trailerCarousel').length) {
+                jQuery('#trailerCarousel').carousel(slide);
+            }
+            // Scroll suave a la sección de trailers
+            const trailerSection = document.getElementById('trailer');
+            if (trailerSection) {
+                trailerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Smooth scroll para el link de momentos destacados si usas ancla normal
+    document.querySelectorAll('a[href="#highlights"]').forEach(a => {
+        a.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.getElementById('highlights');
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
 });
