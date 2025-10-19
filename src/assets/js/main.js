@@ -95,4 +95,88 @@ document.addEventListener('DOMContentLoaded', function () {
             if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
+
+    // Inicializar placeholders de highlights (miniaturas y click -> reemplazo por iframe)
+    function secondsToTimeLabel(sec) {
+        const s = Number(sec);
+        const hh = Math.floor(s / 3600);
+        const mm = Math.floor((s % 3600) / 60);
+        const ss = Math.floor(s % 60);
+        if (hh > 0) return `${hh}:${String(mm).padStart(2,'0')}:${String(ss).padStart(2,'0')}`;
+        return `${mm}:${String(ss).padStart(2,'0')}`;
+    }
+
+    function initHighlightPlaceholders() {
+        document.querySelectorAll('.highlight-placeholder').forEach(placeholder => {
+            const videoId = placeholder.dataset.videoId;
+            const start = parseInt(placeholder.dataset.start || '0', 10);
+            const end = parseInt(placeholder.dataset.end || '0', 10);
+
+            // Usar miniatura de YouTube (no se descarga, se usa la URL pública)
+            const thumbUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+            placeholder.style.backgroundImage = `url("${thumbUrl}")`;
+
+            // badge de tiempo
+            const timeBadge = document.createElement('span');
+            timeBadge.className = 'time-badge';
+            timeBadge.textContent = end ? `${secondsToTimeLabel(start)} - ${secondsToTimeLabel(end)}` : secondsToTimeLabel(start);
+            placeholder.appendChild(timeBadge);
+
+            // play button
+            const btn = document.createElement('div');
+            btn.className = 'yt-play-btn';
+            placeholder.appendChild(btn);
+
+            // click -> reemplazar por iframe con enablejsapi y autoplay
+            placeholder.addEventListener('click', function () {
+                // construir src con enablejsapi
+                let src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&rel=0&autoplay=1&playsinline=1`;
+                if (!isNaN(start) && start > 0) src += `&start=${start}`;
+                if (!isNaN(end) && end > 0) src += `&end=${end}`;
+                const iframe = document.createElement('iframe');
+                iframe.className = 'embed-responsive-item replaced-yt';
+                iframe.setAttribute('src', src);
+                // permitir reproducción y autoplay explícito
+                iframe.setAttribute('allow', 'autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+                iframe.setAttribute('playsinline', ''); // importante en móviles
+                iframe.setAttribute('allowfullscreen', '');
+                // usar el aria-label como title para accesibilidad
+                iframe.setAttribute('title', placeholder.getAttribute('aria-label') || 'YouTube video');
+
+                // forzar estilos para que llene y quede encima
+                iframe.style.position = 'absolute';
+                iframe.style.top = '0';
+                iframe.style.left = '0';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = '0';
+                iframe.style.zIndex = '9999';
+                
+                placeholder.classList.add('replaced-container');
+                placeholder.innerHTML = ''; // limpiar miniatura
+                placeholder.style.display = 'block';
+                placeholder.style.position = 'relative';
+                placeholder.appendChild(iframe);
+            }, { once: true });
+        });
+    }
+
+    // Pausar videos del carousel de highlights al cambiar slide
+    if (window.jQuery && jQuery('#highlight-carousel').length) {
+        jQuery('#highlight-carousel').on('slide.bs.carousel', function () {
+            // buscar iframe dentro del carousel y enviar mensaje de pausa (YouTube API postMessage)
+            const $active = jQuery(this).find('.carousel-item.active');
+            const $iframes = $active.find('iframe');
+            $iframes.each(function () {
+                try {
+                    this.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                } catch (e) {
+                    // ignore
+                }
+            });
+        });
+    }
+
+    // Inicializar al cargar
+    initHighlightPlaceholders();
 });
