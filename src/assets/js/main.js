@@ -112,51 +112,54 @@ document.addEventListener('DOMContentLoaded', function () {
             const start = parseInt(placeholder.dataset.start || '0', 10);
             const end = parseInt(placeholder.dataset.end || '0', 10);
 
-            // Usar miniatura de YouTube (no se descarga, se usa la URL pública)
+            // Configurar miniatura
             const thumbUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
             placeholder.style.backgroundImage = `url("${thumbUrl}")`;
 
-            // badge de tiempo
+            // Badge de tiempo
             const timeBadge = document.createElement('span');
             timeBadge.className = 'time-badge';
             timeBadge.textContent = end ? `${secondsToTimeLabel(start)} - ${secondsToTimeLabel(end)}` : secondsToTimeLabel(start);
             placeholder.appendChild(timeBadge);
 
-            // play button
+            // Botón de play
             const btn = document.createElement('div');
             btn.className = 'yt-play-btn';
             placeholder.appendChild(btn);
 
-            // click -> reemplazar por iframe con enablejsapi y autoplay
-            placeholder.addEventListener('click', function () {
-                // construir src con enablejsapi
-                let src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&rel=0&autoplay=1&playsinline=1`;
-                if (!isNaN(start) && start > 0) src += `&start=${start}`;
-                if (!isNaN(end) && end > 0) src += `&end=${end}`;
-                const iframe = document.createElement('iframe');
-                iframe.className = 'embed-responsive-item replaced-yt';
-                iframe.setAttribute('src', src);
-                // permitir reproducción y autoplay explícito
-                iframe.setAttribute('allow', 'autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
-                iframe.setAttribute('playsinline', ''); // importante en móviles
-                iframe.setAttribute('allowfullscreen', '');
-                // usar el aria-label como title para accesibilidad
-                iframe.setAttribute('title', placeholder.getAttribute('aria-label') || 'YouTube video');
+            // Manejador de click
+            placeholder.addEventListener('click', function() {
+                // Crear contenedor wrapper para mantener aspect ratio
+                const wrapper = document.createElement('div');
+                wrapper.style.cssText = `
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: #000;
+                `;
 
-                // forzar estilos para que llene y quede encima
-                iframe.style.position = 'absolute';
-                iframe.style.top = '0';
-                iframe.style.left = '0';
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-                iframe.style.border = '0';
-                iframe.style.zIndex = '9999';
-                
-                placeholder.classList.add('replaced-container');
-                placeholder.innerHTML = ''; // limpiar miniatura
-                placeholder.style.display = 'block';
-                placeholder.style.position = 'relative';
-                placeholder.appendChild(iframe);
+                // Crear iframe
+                const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1${start ? '&start=' + start : ''}${end ? '&end=' + end : ''}`;
+                const iframe = document.createElement('iframe');
+                iframe.style.cssText = `
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    z-index: 2;
+                `;
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                iframe.allowFullscreen = true;
+                iframe.src = src;
+
+                // Limpiar placeholder y agregar nuevo contenido
+                placeholder.innerHTML = '';
+                wrapper.appendChild(iframe);
+                placeholder.appendChild(wrapper);
             }, { once: true });
         });
     }
