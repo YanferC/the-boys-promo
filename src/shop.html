@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tienda — The Boys Promo</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* ajustes específicos de tienda */
+    .shop-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1rem; }
+    .product-card { background: rgba(34,34,34,0.85); border:2px solid var(--gold-main); border-radius:10px; padding:12px; display:flex; flex-direction:column; }
+    .product-card img { width:100%; height:160px; object-fit:cover; border-radius:6px; }
+    .product-actions { margin-top:auto; display:flex; gap:.5rem; align-items:center; }
+    .cart-count-badge { position:relative; top:-2px; margin-left:6px; }
+    /* cart modal content */
+    .cart-item { display:flex; gap:.75rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); padding:8px 0; }
+    .cart-item img { width:64px; height:48px; object-fit:cover; border-radius:6px; }
+
+    /* Back button personalizado (más visible, sin borde blanco) */
+    .back-btn {
+      border: none;
+      background: linear-gradient(90deg, var(--red-main) 60%, var(--gold-main) 100%);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+      padding: .35rem .6rem;
+      border-radius: 6px;
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar (basada en tu index) -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Regresar">
+          <a href="index.html" class="back-btn" aria-label="Volver a inicio">← Volver</a>
+          <img src="assets/img/logo.png" alt="Logo" style="height:36px;" class="ml-2 mr-2">
+          THE BOYS
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navShop">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navShop">
+          <ul class="navbar-nav ml-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#ofertas">Ofertas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#info">Información</a></li>
+            <li class="nav-item">
+              <button id="openCartBtn" class="btn btn-danger ml-3" data-toggle="modal" data-target="#cartModal" aria-label="Abrir carrito">
+                Carrito <span id="cartCount" class="badge badge-light cart-count-badge">0</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container" style="padding-top:110px; padding-bottom:60px;">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h1>La Tienda Oficial — The Boys</h1>
+        <p style="color:var(--gold-main)">Solo camisas y busos oficiales — diseños exclusivos. Compra segura (demo).</p>
+      </div>
+    </div>
+
+    <!-- Productos -->
+    <section id="productos" class="mb-4">
+      <div class="shop-grid" id="productsGrid">
+        <!-- Los cards se generan por JS -->
+      </div>
+    </section>
+
+    <!-- Info / footer de la tienda -->
+    <section id="info" class="mt-4">
+      <h4>Políticas</h4>
+      <p style="color:#ddd">Compra de ejemplo: este checkout es demostrativo. Los pagos no se procesan aquí.</p>
+    </section>
+  </main>
+
+  <!-- Modal del carrito -->
+  <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-right modal-lg" role="document" style="max-width:720px;">
+      <div class="modal-content" style="background:#111; border:2px solid var(--gold-main);">
+        <div class="modal-header">
+          <h5 class="modal-title">Tu carrito</h5>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="cartBody" style="max-height:60vh; overflow:auto;">
+          <!-- Items se inyectan por JS -->
+        </div>
+        <div class="modal-footer d-flex justify-content-between align-items-center">
+          <div>
+            <small class="text-muted">Envío y pago demo</small>
+          </div>
+          <div>
+            <strong class="mr-3 text-white">Total: <span id="cartTotal">COP $0</span></strong>
+            <button id="checkoutBtn" class="btn btn-danger">Pagar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer copiado del index.html -->
+  <footer id="footer">
+    <div class="bg-dark text-white text-center py-3">
+      <div class="row footer-links container">
+        <!-- Columna The Boys -->
+        <div class="col-6 col-md pb-5 pb-md-0">
+          <p class="text-warning font-weight-bold t9 mb-3">The Boys</p>
+          <a class="sinopsis-text d-block">Temporada 1</a>
+          <a class="sinopsis-text d-block">Temporada 2</a>
+          <a class="sinopsis-text d-block">Temporada 3</a>
+          <a class="sinopsis-text d-block">Temporada 4</a>
+          <a class="sinopsis-text d-block">Spin-offs</a>
+        </div>
+
+        <!-- Columna Personajes -->
+        <div class="col-6 col-md pb-5 pb-md-0">
+          <p class="text-warning font-weight-bold t9 mb-3">Personajes</p>
+          <a class="sinopsis-text d-block" href="#">Billy Butcher</a>
+          <a class="sinopsis-text d-block" href="#">Hughie Campbell</a>
+          <a class="sinopsis-text d-block" href="#">Starlight</a>
+          <a class="sinopsis-text d-block" href="#">Homelander</a>
+          <a class="sinopsis-text d-block" href="#">Soldier Boy</a>
+        </div>
+
+        <!-- Columna Los Siete -->
+        <div class="col-6 col-md pb-5 pb-md-0">
+          <p class="text-warning font-weight-bold t9 mb-3">Los Siete</p>
+          <a class="sinopsis-text d-block" href="#">Homelander</a>
+          <a class="sinopsis-text d-block" href="#">Queen Maeve</a>
+          <a class="sinopsis-text d-block" href="#">A-Train</a>
+          <a class="sinopsis-text d-block" href="#">The Deep</a>
+          <a class="sinopsis-text d-block" href="#">Black Noir</a>
+        </div>
+
+        <!-- Columna Vought -->
+        <div class="col-6 col-md pb-5 pb-md-0">
+          <p class="text-warning font-weight-bold t9 mb-3">Vought</p>
+          <a class="sinopsis-text d-block" href="#">Historia de Vought</a>
+          <a class="sinopsis-text d-block" href="#">Compañías afiliadas</a>
+          <a class="sinopsis-text d-block" href="#">Laboratorios</a>
+          <a class="sinopsis-text d-block" href="#">Comercialización</a>
+          <a class="sinopsis-text d-block" href="#">Campañas</a>
+        </div>
+
+        <!-- Columna Extras -->
+        <div class="col-6 col-md pb-5 pb-md-0">
+          <p class="text-warning font-weight-bold t9 mb-3">Extras</p>
+          <a class="sinopsis-text d-block" href="#">Cómics originales</a>
+          <a class="sinopsis-text d-block" href="#">Noticias y eventos</a>
+          <a class="sinopsis-text d-block" href="#">Galería de imágenes</a>
+          <a class="sinopsis-text d-block" href="#">Entrevistas</a>
+          <a class="sinopsis-text d-block">Detrás de cámaras</a>
+        </div>
+      </div>
+
+      <div class="container-xl mt-3">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg text-center text-lg-left" data-section-category="Footer">
+            <a href="https://www.primevideo.com/-/es/detail/The-Boys/0KRGHGZCHKS920ZQGY5LBRF7MA" target="_blank">
+              <button aria-label="Ver Serie" class="btn btn-danger">VER SERIE AHORA</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-dark text-white text-center py-3">
+      <div class="container-xl">
+        <div class="row align-items-lg-center">
+          <div class="col-12 col-lg-5 col-md-6 footer-rrss row">
+            <p class="m-0 d-block d-lg-none mb-4">Encuentra más contenido:</p>
+            <div class="py-1 d-flex align-items-center justify-content-sm-start justify-content-between" data-expand="0" style="overflow-x: hidden;" data-section-category="Footer">
+              <p class="m-0 d-none d-lg-block pr-3">Encuentra más contenido:</p>
+              <a aria-label="Facebook" href="https://web.facebook.com/TheBoysTV/?_rdc=1&_rdr#" class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
+                <img alt="Facebook Icon" width="32" height="32" src="https://cdn.modyo.cloud/uploads/9bede2b0-2bb5-45f0-abb4-7a4db865c8a2/original/facebook.svg">
+              </a>
+              <a aria-label="Instagram" href="https://www.instagram.com/theboystv/?hl=es" class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
+                <img alt="Instagram icon" width="32" height="32" src="https://cdn.modyo.cloud/uploads/22d6ea97-bedd-45be-928e-200d7a4335b7/original/instagram.svg">
+              </a>
+              <a aria-label="Twitter" href="https://x.com/TheBoysTV?" class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
+                <img alt="Twitter icon" width="32" height="32" src="https://cdn.modyo.cloud/uploads/2d0d72e1-a1e2-4e51-ba7e-406898502b88/original/X-icono.svg">
+              </a>
+              <a aria-label="Youtube" href="https://www.youtube.com/@primevideolatinoamerica" class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
+                <img alt="Youtube Icon" width="32" height="32" src="https://cdn.modyo.cloud/uploads/82fb78c2-bdca-4fc0-ac36-27bd3c96753b/original/youtube.svg">
+              </a>
+              <a aria-label="Tiktok" href="https://www.tiktok.com/@theboystv" class="text-white d-inline-block py-3 py-lg-1 px-2 t6" target="_blank" rel="noreferrer">
+                <img alt="Tiktok Icon" width="32" height="32" src="https://cdn.modyo.cloud/uploads/49dc5a84-d506-43c4-9551-9c09a137dd20/original/TIKTOK_Mesa_de_trabajo_1.svg">
+              </a>
+            </div>
+            <div class="pt-5">
+              <p class="m-0 small text-white text-left">&copy; 2025 The Boys. Todos los derechos reservados.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-5 col-md-6 pt-4">
+            <p class="m-0 d-block d-lg-none mb-4">Casa productora:</p>
+            <div class="d-flex align-items-center gap-3">
+              <p class="m-0 d-none d-lg-block pr-3">Casa productora:</p>
+              <a href="https://www.primevideo.com/" target="_blank" rel="noopener noreferrer">
+                <img class="img-fluid d-block" src="assets/img/logoPrime.png" width="120" height="120" alt="Prime Video">
+              </a>
+              <div class="px-2">
+                <div style="width: 1px; height: 64px; background-color: white;"></div>
+              </div>
+              <img class="img-fluid d-block ml-2" src="assets/img/logo.png" height="150" width="150" alt="Logo">
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-2 col-md-12 pt-4">
+            <p class="m-0 d-block d-lg-none mb-4">Descárgala en:</p>
+            <div class="d-flex flex-column align-items-lg-start align-items-center">
+              <p class="m-0 d-none d-lg-block pr-3 mb-3">Descárgala en:</p>
+              <div class="d-flex gap-2">
+                <a href="https://apps.apple.com/es/app/amazon-prime-video/id545519333" target="_blank" rel="noopener">
+                  <img src="https://cdn.modyo.cloud/uploads/98970824-f09b-4a7e-b002-dcf2e734712b/original/AppStore.png" alt="AppStore" height="40" class="img-fluid">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient&hl=es_CO&pli=1" target="_blank" rel="noopener">
+                  <img src="https://cdn.modyo.cloud/uploads/a8408ea6-079f-4114-9df1-80e2246d54c5/original/PlayStore.png" alt="PlayStore" height="40" class="img-fluid">
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dependencias -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Script de la tienda -->
+  <script src="assets/js/shop.js"></script>
+</body>
+</html>
