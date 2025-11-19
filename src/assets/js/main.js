@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const hh = Math.floor(s / 3600);
         const mm = Math.floor((s % 3600) / 60);
         const ss = Math.floor(s % 60);
-        if (hh > 0) return `${hh}:${String(mm).padStart(2,'0')}:${String(ss).padStart(2,'0')}`;
-        return `${mm}:${String(ss).padStart(2,'0')}`;
+        if (hh > 0) return `${hh}:${String(mm).padStart(2, '0')}:${String(ss).padStart(2, '0')}`;
+        return `${mm}:${String(ss).padStart(2, '0')}`;
     }
 
     function initHighlightPlaceholders() {
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
             placeholder.appendChild(btn);
 
             // Manejador de click
-            placeholder.addEventListener('click', function() {
+            placeholder.addEventListener('click', function () {
                 // Crear contenedor wrapper para mantener aspect ratio
                 const wrapper = document.createElement('div');
                 wrapper.style.cssText = `
@@ -179,6 +179,26 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+    (function ($) {
+        showSwal = function (type) {
+            'use strict';
+            if (type === 'basic') {
+                swal({
+                    title: 'Sugerencia Enviada',
+                    text: 'Gracias por brindarnos tu opinión',
+                    button: {
+                        text: "OK",
+                        value: true,
+                        visible: true,
+                        className: "btn btn-primary"
+                    }
+                })
+
+            }
+        }
+
+    })(jQuery);
 
     // Inicializar al cargar
     initHighlightPlaceholders();

@@ -7,6 +7,8 @@
   <title>The Boys Promo</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -73,9 +75,12 @@
                 <label for="sugerencia-texto">Tu sugerencia:</label>
                 <textarea id="sugerencia-texto" rows="4" placeholder="Escribe aquí tu idea..." required></textarea>
 
-                <label for="miArchivo" class="btn btn-warning">Seleccionar archivo</label>
-                
-                <button type="submit" class="btn btn-danger ml-2" class="submit-btn">Enviar sugerencia</button>
+                <div class="file-upload">
+                  <label for="fileInput">📎 Seleccionar archivo</label>
+                  <input type="file" id="fileInput">
+                  <div class="file-name" id="fileName">Ningún archivo seleccionado</div>
+                </div>
+                <button class="btn btn-outline-success" onclick="showSwal('basic')">Enviar Sugerencia</button>
               </form>
             </div>
           </div>
@@ -259,11 +264,8 @@
           <div class="carousel-item active text-center">
             <h3 class="mb-3">Escena 1</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
-              <div class="highlight-placeholder"
-                   data-video-id="OQoAfQ6pOl4"
-                   data-start="0"
-                   data-end="23"
-                   aria-label="Escena 1 miniatura"></div>
+              <div class="highlight-placeholder" data-video-id="OQoAfQ6pOl4" data-start="0" data-end="23"
+                aria-label="Escena 1 miniatura"></div>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <p>Inicio impactante de la temporada.</p>
@@ -274,11 +276,8 @@
           <div class="carousel-item text-center">
             <h3 class="mb-3">Escena 2</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
-              <div class="highlight-placeholder"
-                   data-video-id="OQoAfQ6pOl4"
-                   data-start="430"
-                   data-end="545"
-                   aria-label="Escena 2 miniatura"></div>
+              <div class="highlight-placeholder" data-video-id="OQoAfQ6pOl4" data-start="430" data-end="545"
+                aria-label="Escena 2 miniatura"></div>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <p>Un momento clave y sangriento.</p>
@@ -289,11 +288,8 @@
           <div class="carousel-item text-center">
             <h3 class="mb-3">Escena 3</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
-              <div class="highlight-placeholder"
-                   data-video-id="OQoAfQ6pOl4"
-                   data-start="31"
-                   data-end="270"
-                   aria-label="Escena 3 miniatura"></div>
+              <div class="highlight-placeholder" data-video-id="OQoAfQ6pOl4" data-start="31" data-end="270"
+                aria-label="Escena 3 miniatura"></div>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <p>La tensión sube al máximo.</p>
@@ -304,11 +300,8 @@
           <div class="carousel-item text-center">
             <h3 class="mb-3">Escena 4</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
-              <div class="highlight-placeholder"
-                   data-video-id="OQoAfQ6pOl4"
-                   data-start="271"
-                   data-end="295"
-                   aria-label="Escena 4 miniatura"></div>
+              <div class="highlight-placeholder" data-video-id="OQoAfQ6pOl4" data-start="271" data-end="295"
+                aria-label="Escena 4 miniatura"></div>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <p>Un giro inesperado.</p>
@@ -319,11 +312,8 @@
           <div class="carousel-item text-center">
             <h3 class="mb-3">Escena 5</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
-              <div class="highlight-placeholder"
-                   data-video-id="OQoAfQ6pOl4"
-                   data-start="296"
-                   data-end="322"
-                   aria-label="Escena 5 miniatura"></div>
+              <div class="highlight-placeholder" data-video-id="OQoAfQ6pOl4" data-start="296" data-end="322"
+                aria-label="Escena 5 miniatura"></div>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <p>Acción y caos al estilo The Boys.</p>
@@ -334,11 +324,8 @@
           <div class="carousel-item text-center">
             <h3 class="mb-3">Escena 6</h3>
             <div class="embed-responsive embed-responsive-16by9" style="max-width:800px; margin:auto;">
-              <div class="highlight-placeholder"
-                   data-video-id="OQoAfQ6pOl4"
-                   data-start="400"
-                   data-end="428"
-                   aria-label="Escena 6 miniatura"></div>
+              <div class="highlight-placeholder" data-video-id="OQoAfQ6pOl4" data-start="400" data-end="428"
+                aria-label="Escena 6 miniatura"></div>
             </div>
             <div class="carousel-caption d-none d-md-block">
               <p>Un cierre brutal para el recuerdo.</p>
@@ -430,11 +417,13 @@
         <!-- Reseña 4 -->
         <div class="review-card actor-card">
           <div class="review-header py-2 px-3">
-            <span class="review-title font-weight-bold" style="color: var(--gold-main);">Temporada 1: Brutal inicio</span>
+            <span class="review-title font-weight-bold" style="color: var(--gold-main);">Temporada 1: Brutal
+              inicio</span>
           </div>
           <div class="review-body px-3 py-2">
             <p class="review-text" style="color: #fff;">
-              El arranque de la serie es impactante y diferente. Te engancha con su crítica social y personajes fuera de lo común.
+              El arranque de la serie es impactante y diferente. Te engancha con su crítica social y personajes fuera de
+              lo común.
             </p>
           </div>
           <div class="review-footer px-3 py-2">
@@ -453,7 +442,8 @@
           </div>
           <div class="review-body px-3 py-2">
             <p class="review-text" style="color: #fff;">
-              La segunda temporada lleva el caos y la violencia a otro nivel. Los giros de la trama te dejan con la boca abierta.
+              La segunda temporada lleva el caos y la violencia a otro nivel. Los giros de la trama te dejan con la boca
+              abierta.
             </p>
           </div>
           <div class="review-footer px-3 py-2">
@@ -491,7 +481,8 @@
           </div>
           <div class="review-body px-3 py-2">
             <p class="review-text" style="color: #fff;">
-              La cuarta temporada mantiene el ritmo y la calidad. Los personajes evolucionan y la historia sigue sorprendiendo.
+              La cuarta temporada mantiene el ritmo y la calidad. Los personajes evolucionan y la historia sigue
+              sorprendiendo.
             </p>
           </div>
           <div class="review-footer px-3 py-2">
@@ -505,6 +496,89 @@
         </div>
         <!-- Agrega más review-card según necesites -->
       </div>
+    </section>
+
+    <!-- Sección de Merch -->
+    <section id="reviews" class="carousel my-5">
+      <h2>Merch The Boys</h2>
+      <div class="carousel-container">
+        <!-- Prenda 1 -->
+        <div class="review-card actor-card">
+          <div class="review-body px-3 py-2">
+            <img src="assets/img/Merch_Principal/sudaderaHomelander.jpg" class='img-fluid'>
+          </div>
+          <div class="review-footer px-3 py-2">
+            <div>
+              <span class="review-title font-weight-bold d-block text-start" style="color: var(--gold-main);">Sudadera
+                con capucha Homelander</span>
+              <p class="review-text" style="color: #fff;">The Boys Sudadera con capucha Homelander con diseño de ojos
+                goteadores, Negro, S</p>
+              <div class="review-stars text-center mb-2">
+                <span style="color: var(--gold-main); font-size: 1.2em;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              </div>
+              <p class="review-text" style="color: #fff; font-size: 22px;">$ 39.9</p>
+            </div>
+          </div>
+        </div>
+        <!-- Prenda 2 -->
+        <div class="review-card actor-card">
+          <div class="review-body px-3 py-2">
+            <img src="assets/img/Merch_Principal/camisetaGraffiti.jpg" class='img-fluid'>
+          </div>
+          <div class="review-footer px-3 py-2">
+            <div>
+              <span class="review-title font-weight-bold d-block text-start" style="color: var(--gold-main);">Camiseta
+                Graffiti The Boys</span>
+              <p class="review-text" style="color: #fff;">The Boys Camiseta con foto de grupo Graffiti, Negro, M</p>
+              <div class="review-stars text-center mb-2">
+                <span style="color: var(--gold-main); font-size: 1.2em;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              </div>
+              <p class="review-text" style="color: #fff; font-size: 22px;">$ 16.99</p>
+            </div>
+          </div>
+        </div>
+        <!-- Prenda 3 -->
+        <div class="review-card actor-card">
+          <div class="review-body px-3 py-2">
+            <img src="assets/img/Merch_Principal/camisetaButcher.jpg" class='img-fluid'>
+          </div>
+          <div class="review-footer px-3 py-2">
+            <div>
+              <span class="review-title font-weight-bold d-block text-start" style="color: var(--gold-main);">Camiseta
+                Butcher</span>
+              <p class="review-text" style="color: #fff;">The Boys Camiseta Butcher Don't Be A.., Negro, L</p>
+              <div class="review-stars text-center mb-2">
+                <span style="color: var(--gold-main); font-size: 1.2em;">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+              </div>
+              <p class="review-text" style="color: #fff; font-size: 22px;">$ 32.00</p>
+            </div>
+          </div>
+        </div>
+        <!-- Prenda 4 -->
+        <div class="review-card actor-card">
+          <div class="review-body px-3 py-2">
+            <img src="assets/img/Merch_Principal/sudaderaTheBoys.jpg" class='img-fluid'>
+          </div>
+          <div class="review-footer px-3 py-2">
+            <div>
+              <span class="review-title font-weight-bold d-block text-start" style="color: var(--gold-main);">Sudadera
+                con capucha The Boys</span>
+              <p class="review-text" style="color: #fff;">The Boys Show Logo Sudadera con capucha, Negro, S</p>
+              <div class="review-stars text-center mb-2">
+                <span style="color: var(--gold-main); font-size: 1.2em;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              </div>
+              <p class="review-text" style="color: #fff; font-size: 22px;">$ 25.99</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card actor-card">
+          <div class="review-body px-3 py-2 d-flex align-items-center justify-content-center">
+            <button id="continue-spoiler" class="btn btn-danger ml-2">Ver Más</button>
+          </div>
+        </div>
+        <!-- Agrega más review-card según necesites -->
+      </div>
+
     </section>
   </main>
 
@@ -667,7 +741,7 @@
     </div>
   </footer>
 
-  
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -701,6 +775,18 @@
           $iframe[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
         }
       });
+    });
+  </script>
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const fileName = document.getElementById('fileName');
+
+    fileInput.addEventListener('change', function () {
+      if (fileInput.files.length > 0) {
+        fileName.textContent = fileInput.files[0].name;
+      } else {
+        fileName.textContent = "Ningún archivo seleccionado";
+      }
     });
   </script>
 </body>
