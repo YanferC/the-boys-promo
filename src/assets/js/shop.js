@@ -1,13 +1,16 @@
+// Carrito de compras
 (function () {
+  // Datos de productos
   const PRODUCTS = [
-    { id: 'p1', title: 'Camisa Homelander', price: 49900, img: 'assets/img/product1.jpg', desc: 'Camisa oficial, algodón 100%.' },
-    { id: 'p2', title: 'Buso Homelander', price: 79900, img: 'assets/img/product2.jpg', desc: 'Buso (sudadera) con capucha, edición limitada.' },
-    { id: 'p3', title: 'Camisa Vought', price: 45900, img: 'assets/img/product3.jpg', desc: 'Camisa clásica con logo Vought.' },
-    { id: 'p4', title: 'Buso The Boys - Negro', price: 89900, img: 'assets/img/product4.jpg', desc: 'Buso oscuro con estampado frontal.' },
-    { id: 'p5', title: 'Camisa "The Boys" - Diseño', price: 42900, img: 'assets/img/product5.jpg', desc: 'Camisa con arte exclusivo.' },
-    { id: 'p6', title: 'Buso Edición Coleccionista', price: 109900, img: 'assets/img/product6.jpg', desc: 'Buso premium, edición coleccionista.' }
+    { id: 'p1', title: 'Camisa Homelander', price: 49900, img: 'assets/img/Merch_Principal/sudaderaHomelander.jpg', desc: 'Camisa oficial, algodón 100%.' },
+    { id: 'p2', title: 'Buso Homelander', price: 79900, img: 'assets/img/Merch_Principal/camisetaGraffiti.jpg', desc: 'Buso (sudadera) con capucha, edición limitada.' },
+    { id: 'p3', title: 'Camisa Vought', price: 45900, img: 'assets/img/Merch_Principal/sudaderaHomelander.jpg', desc: 'Camisa clásica con logo Vought.' },
+    { id: 'p4', title: 'Buso The Boys - Negro', price: 89900, img: 'assets/img/Merch_Principal/sudaderaTheBoys.jpg', desc: 'Buso oscuro con estampado frontal.' },
+    { id: 'p5', title: 'Camisa "The Boys" - Diseño', price: 42900, img: 'assets/img/Merch_Principal/sudaderaHomelander.jpg', desc: 'Camisa con arte exclusivo.' },
+    { id: 'p6', title: 'Buso Edición Coleccionista', price: 109900, img: 'assets/img/Merch_Principal/sudaderaHomelander.jpg', desc: 'Buso premium, edición coleccionista.' }
   ];
-
+  
+  // Para obtener el producto que se selecciona desde el html
   const KEY = 'tb_cart_v1';
   let cart = JSON.parse(localStorage.getItem(KEY) || '[]');
 

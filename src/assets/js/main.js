@@ -4,11 +4,19 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Restricción de edad
     const ageModal = document.getElementById('age-modal'); // Mostrar el modal al cargar la página obteniendo el id del modal
-    document.getElementById('age-yes').onclick = function () { // Si el usuario confirma que es mayor de edad, se cierra el modal
-        document.getElementById('age-modal').style.display = 'none'; // Ocultar el modal
-    };
-    document.getElementById('age-no').onclick = function () { // Si el usuario confirma que no es mayor de edad, se redirige a otra página
-        window.location.href = 'https://www.google.com'; // Redirigir a Google u otra página segura
+    // Verificar si el usuario ya ha verificado su edad
+    if (localStorage.getItem('theboys_age_verified') === '1') {
+        ageModal.style.display = 'none';
+    } else {
+        ageModal.style.display = 'block';
+        // Manejar botones del modal
+        document.getElementById('age-yes').onclick = function () {
+            localStorage.setItem('theboys_age_verified', '1');
+            ageModal.style.display = 'none';
+        };
+        document.getElementById('age-no').onclick = function () {
+            window.location.href = 'https://www.google.com';
+        };
     };
 
     // Spoiler banner
@@ -55,15 +63,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById("sugerencia-modal");
     const openBtn = document.querySelector(".open-modal-btn");
     const closeBtn = document.querySelector(".close-btn");
-
+     
+    // Abrir y cerrar el modal
     openBtn.addEventListener("click", () => {
         modal.style.display = "flex";
     });
 
+    // Cerrar el modal
     closeBtn.addEventListener("click", () => {
         modal.style.display = "none";
     });
-
+    // Cerrar el modal al hacer clic fuera del contenido del modal
     window.addEventListener("click", (e) => {
         if (e.target === modal) {
             modal.style.display = "none";
@@ -106,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return `${mm}:${String(ss).padStart(2, '0')}`;
     }
 
+    // Inicializar los placeholders de highlights
     function initHighlightPlaceholders() {
         document.querySelectorAll('.highlight-placeholder').forEach(placeholder => {
             const videoId = placeholder.dataset.videoId;
@@ -179,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-
+     // SweetAlert para sugerencias
     (function ($) {
         showSwal = function (type) {
             'use strict';
