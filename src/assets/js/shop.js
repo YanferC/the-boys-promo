@@ -247,12 +247,9 @@
     if (cartBodyEl) cartBodyEl.addEventListener('click', cartDelegation);
     const checkoutBtn = document.getElementById('checkoutBtn');
     if (checkoutBtn) checkoutBtn.addEventListener('click', checkout);
-<<<<<<< HEAD
     const guardarTotalYPagarBtn = document.getElementById('guardarTotalYPagar');
     if (guardarTotalYPagarBtn) guardarTotalYPagarBtn.addEventListener('click', guardarTotalYPagar);
     // when modal opens, render cart content
-=======
->>>>>>> ee644f26f1c47063538ee16e6563485da0ed0941
     $('#cartModal').on('show.bs.modal', function () { renderCart(); });
   }
 
