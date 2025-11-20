@@ -57,9 +57,6 @@
           <li class="nav-item"><a class="nav-link" href="#characters">Personajes</a></li>
           <li class="nav-item"><a class="nav-link" href="#calendar">Fecha Estreno</a></li>
           <li class="nav-item"><a class="nav-link" href="#spoiler-banner">Momentos Destacados</a></li>
-          <li class="nav-item">
-           <a class="nav-link btn btn-outline-light btn-sm ml-2" href="shop.html" style="color:inherit;">Tienda</a>
-         </li>
           <button class="open-modal-btn btn btn-outline-light">Enviar sugerencia</button>
           <div id="sugerencia-modal" class="custom-modal">
             <div class="custom-modal-content">
@@ -516,7 +513,7 @@
               <div class="review-stars text-center mb-2">
                 <span style="color: var(--gold-main); font-size: 1.2em;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               </div>
-              <p class="review-text" style="color: #fff; font-size: 22px;">$ 39.9</p>
+              <p class="review-text" style="color: #fff; font-size: 22px;">COP $39,900</p>
             </div>
           </div>
         </div>
@@ -533,7 +530,7 @@
               <div class="review-stars text-center mb-2">
                 <span style="color: var(--gold-main); font-size: 1.2em;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               </div>
-              <p class="review-text" style="color: #fff; font-size: 22px;">$ 16.99</p>
+              <p class="review-text" style="color: #fff; font-size: 22px;">COP $16,999</p>
             </div>
           </div>
         </div>
@@ -550,7 +547,7 @@
               <div class="review-stars text-center mb-2">
                 <span style="color: var(--gold-main); font-size: 1.2em;">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
               </div>
-              <p class="review-text" style="color: #fff; font-size: 22px;">$ 32.00</p>
+              <p class="review-text" style="color: #fff; font-size: 22px;">COP $32,000</p>
             </div>
           </div>
         </div>
@@ -567,13 +564,20 @@
               <div class="review-stars text-center mb-2">
                 <span style="color: var(--gold-main); font-size: 1.2em;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               </div>
-              <p class="review-text" style="color: #fff; font-size: 22px;">$ 25.99</p>
+              <p class="review-text" style="color: #fff; font-size: 22px;">COP $25,999</p>
             </div>
           </div>
         </div>
-        <div class="review-card actor-card">
-          <div class="review-body px-3 py-2 d-flex align-items-center justify-content-center">
-            <button id="continue-spoiler" class="btn btn-danger ml-2">Ver Más</button>
+        <div class="review-card actor-card d-flex flex-column justify-content-center align-items-center"
+          style="min-width:220px;">
+          <div class="review-body px-3 py-2 d-flex align-items-center justify-content-center w-100">
+            <a href="shop.html" class="btn btn-lg btn-danger d-flex align-items-center justify-content-center w-100"
+              style="font-size:1.2rem; gap:.5rem;">
+              <span>Ver toda la tienda</span>
+              <svg width="24" height="24" fill="currentColor" style="margin-left:8px;" viewBox="0 0 24 24">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
           </div>
         </div>
         <!-- Agrega más review-card según necesites -->

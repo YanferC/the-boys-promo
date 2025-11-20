@@ -1,0 +1,120 @@
+/* Grid de productos */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* Card de producto */
+.product-card {
+  background: rgba(34,34,34,0.85);
+  border: 2px solid var(--gold-main, #C9B037);
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Imagen del producto */
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #222;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(201,176,55,0.15);
+  display: block;
+}
+
+/* Acciones del producto */
+.product-actions {
+  margin-top: auto;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* Badge del carrito */
+.cart-count-badge {
+  position: relative;
+  top: -2px;
+  margin-left: 6px;
+}
+
+/* Modal carrito */
+.cart-item {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 8px 0;
+}
+.cart-item img {
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Botón volver */
+.back-btn {
+  border: none;
+  background: linear-gradient(90deg, var(--red-main, #dc3545) 60%, var(--gold-main, #C9B037) 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+  padding: .35rem .6rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+
+/* Animación al agregar al carrito */
+@keyframes popCart {
+  0% { transform: scale(1); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+.cart-count-badge.animated {
+  animation: popCart 0.5s;
+}
+
+/* Hover animación en cards */
+.product-card {
+  transition: box-shadow .2s, transform .2s;
+}
+.product-card:hover {
+  box-shadow: 0 8px 24px rgba(220,53,69,0.18);
+  transform: translateY(-4px) scale(1.03);
+  border-color: var(--red-main, #dc3545);
+}
+
+/* Modal vista rápida mejorado */
+#quickViewModal .modal-content {
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(220,53,69,0.18);
+}
+#quickViewModal .modal-header {
+  border-bottom: 1px solid #333;
+}
+#quickViewModal .btn-link {
+  padding: 0;
+  font-size: 1em;
+}
+#guiaTallaModal .modal-content {
+  border-radius: 16px;
+  background: #222;
+  color: #fff;
+}
+#guiaTallaModal table th, #guiaTallaModal table td {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}

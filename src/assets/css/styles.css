@@ -687,3 +687,93 @@ section {
     color: var(--gold-hover);
     text-align: center;
 }
+
+/* Estilo adicional para botones de peligro */
+.btn-danger:hover, .btn-danger:focus {
+  background: linear-gradient(90deg, #dc3545 70%, var(--gold-main) 100%);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 2px 12px rgba(220,53,69,0.25);
+}
+
+/* Mejora de alineación para las cards de Merch The Boys */
+.review-card.actor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 260px;
+    min-width: 220px;
+    margin-bottom: 20px;
+    background: rgba(34, 34, 34, 0.95);
+    border-radius: 15px;
+    border: 2px solid var(--gold-main, #C9B037);
+    box-shadow: 0 4px 10px var(--red-main, #dc3545, 0.2);
+    padding-bottom: 18px;
+}
+
+.review-body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+.review-body img.img-fluid {
+    max-width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+    background: #222;
+    box-shadow: 0 2px 8px var(--gold-shadow);
+}
+
+.review-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1.5px solid var(--gold-main, #C9B037);
+    margin-top: 12px;
+    padding-top: 12px;
+    padding-bottom: 0;
+}
+
+.review-title {
+    font-size: 1.15em;
+    color: var(--gold-main);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.review-text {
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.review-stars {
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.review-footer p.review-text:last-child {
+    font-size: 1.15em;
+    color: var(--gold-main);
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 4px;
+    text-align: center;
+}
+
+/* Centrar el botón "Ver toda la tienda" */
+.review-card.actor-card .review-body a.btn {
+    margin: 0 auto;
+    width: 90%;
+    justify-content: center;
+}
