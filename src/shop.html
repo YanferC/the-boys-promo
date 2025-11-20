@@ -103,44 +103,49 @@
   </div>
 
   <!-- Modal vista rápida -->
-  <div class="modal fade" id="guiaTallaModal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-md" role="document">
-    <div class="modal-content" style="background:#222; color:#fff; border-radius:16px;">
-      <div class="modal-header">
-        <h5 class="modal-title">Mira la guía de tallas</h5>
-        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Cerrar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <table class="table table-bordered table-dark text-center mb-3">
-          <thead>
-            <tr>
-              <th>SIZE</th><th>XS</th><th>S</th><th>M</th><th>L</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Euro</td><td>32/34</td><td>36</td><td>38</td><td>40</td></tr>
-            <tr><td>USA</td><td>0/2</td><td>4</td><td>6</td><td>8</td></tr>
-            <tr><td>Bust(in)</td><td>31-32</td><td>33</td><td>34</td><td>36</td></tr>
-            <tr><td>Bust(cm)</td><td>80.5-82.5</td><td>84.5</td><td>87</td><td>92</td></tr>
-            <tr><td>Waist(in)</td><td>24-25</td><td>26</td><td>27</td><td>29</td></tr>
-            <tr><td>Waist(cm)</td><td>62.5-64.5</td><td>66.5</td><td>69</td><td>74</td></tr>
-            <tr><td>Hips(in)</td><td>34-35</td><td>36</td><td>37</td><td>39</td></tr>
-            <tr><td>Hips(cm)</td><td>87.5-89.5</td><td>91.5</td><td>94</td><td>99</td></tr>
-          </tbody>
-        </table>
-        <div class="mb-2" style="font-size:.98em;">
-          <strong>Cómo medir tu busto:</strong>
-          <div>Con los brazos relajados a los lados, mide alrededor de la parte más llena del pecho.</div>
+  <div class="modal fade" id="quickViewModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content" style="background:#222; color:#fff; border-radius:16px;">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+          <h5 class="modal-title" id="quickViewTitle"></h5>
+          <div>
+            <button id="prevProductBtn" class="btn btn-outline-light btn-sm mr-2" aria-label="Producto anterior">&#8592;</button>
+            <button id="nextProductBtn" class="btn btn-outline-light btn-sm" aria-label="Producto siguiente">&#8594;</button>
+            <button type="button" class="close text-white ml-3" data-dismiss="modal" aria-label="Cerrar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
         </div>
-        <div style="font-size:.98em;">
-          <strong>Cómo medir tu cintura:</strong>
-          <div>Mide alrededor de la parte más estrecha de tu cintura, generalmente alrededor del ombligo. Para un ajuste cómodo, deja un dedo entre la cinta y tu cuerpo.</div>
+        <div class="modal-body d-flex flex-column flex-md-row align-items-center">
+          <img id="quickViewImg" src="" alt="" style="max-width:320px; max-height:320px; border-radius:12px; margin-right:32px; background:#fff;">
+          <div style="flex:1; min-width:220px;">
+            <p id="quickViewDesc" class="mb-2"></p>
+            <div class="mb-2">
+              <span id="quickViewPrice" style="font-size:1.3em; color:var(--gold-main); font-weight:bold;"></span>
+              <span id="quickViewImpuestos" style="font-size:.95em; color:#bbb; margin-left:8px;">Impuestos incluidos</span>
+            </div>
+            <div class="mb-2">
+              <label for="quickViewColor" style="font-weight:600;">Color:</label>
+              <span id="quickViewColor" style="margin-left:8px; font-size:1em;">Negro</span>
+            </div>
+            <div class="mb-2">
+              <label for="quickViewTalla" style="font-weight:600;">Talla:</label>
+              <select id="quickViewTalla" class="form-control form-control-sm" style="width:120px; display:inline-block;">
+                <option>S</option><option>M</option><option>L</option><option>XL</option>
+              </select>
+              <button id="guiaTallaBtn" class="btn btn-link btn-sm" style="color:var(--gold-main); text-decoration:underline;" type="button">
+                Guía de tallas
+              </button>
+            </div>
+            <div class="mb-2">
+              <label for="quickViewCantidad" style="font-weight:600;">Cantidad:</label>
+              <input type="number" id="quickViewCantidad" class="form-control form-control-sm" value="1" min="1" style="width:80px; display:inline-block;">
+            </div>
+            <button id="quickViewAddBtn" class="btn btn-danger mt-2 w-100" style="font-size:1.1em;">Añadir al carrito</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <!-- Toast de notificación -->
