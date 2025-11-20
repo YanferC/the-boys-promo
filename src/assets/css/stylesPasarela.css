@@ -15,6 +15,15 @@ body {
     animation: fadeIn 0.3s ease-in-out;
 }
 
+.card-dark {
+    background: #1f1f1f !important;
+    /* gris-negro elegante */
+    color: #fff !important;
+    /* texto blanco */
+    border: none !important;
+    /* sin borde */
+}
+
 h2 {
     font-weight: 600;
     margin-bottom: 25px;
@@ -65,6 +74,8 @@ button.btn-primary {
     border: none;
     font-size: 16px;
     font-weight: 600;
+<<<<<<< HEAD
+=======
 }
 
 /* Mejor visualización de imágenes en shop */
@@ -78,4 +89,5 @@ button.btn-primary {
     background: #222;
     border-radius: 10px;
     box-shadow: 0 2px 8px var(--gold-shadow);
+>>>>>>> ee644f26f1c47063538ee16e6563485da0ed0941
 }

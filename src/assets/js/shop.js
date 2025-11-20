@@ -152,6 +152,12 @@
     cart = []; saveCart(); renderCart(); renderCartCount();
     $('#cartModal').modal('hide');
   }
+  
+  function guardarTotalYPagar() {
+    let total = document.getElementById("cartTotal").textContent;
+    localStorage.setItem("totalCarrito", total);
+    window.location.href = "pagos.html";
+  }
 
   function showToast(msg) {
     const toast = document.getElementById('shopToast');
@@ -241,6 +247,12 @@
     if (cartBodyEl) cartBodyEl.addEventListener('click', cartDelegation);
     const checkoutBtn = document.getElementById('checkoutBtn');
     if (checkoutBtn) checkoutBtn.addEventListener('click', checkout);
+<<<<<<< HEAD
+    const guardarTotalYPagarBtn = document.getElementById('guardarTotalYPagar');
+    if (guardarTotalYPagarBtn) guardarTotalYPagarBtn.addEventListener('click', guardarTotalYPagar);
+    // when modal opens, render cart content
+=======
+>>>>>>> ee644f26f1c47063538ee16e6563485da0ed0941
     $('#cartModal').on('show.bs.modal', function () { renderCart(); });
   }
 
