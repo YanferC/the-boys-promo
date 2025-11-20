@@ -15,6 +15,15 @@ body {
     animation: fadeIn 0.3s ease-in-out;
 }
 
+.card-dark {
+    background: #1f1f1f !important;
+    /* gris-negro elegante */
+    color: #fff !important;
+    /* texto blanco */
+    border: none !important;
+    /* sin borde */
+}
+
 h2 {
     font-weight: 600;
     margin-bottom: 25px;

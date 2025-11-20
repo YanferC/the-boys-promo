@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PayMerch</title>
+    <title>PayMerch -- The Boys Promo</title>
     <link rel="stylesheet" href="assets/css/stylesPasarela.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -14,18 +14,19 @@
 </head>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Regresar">
-          <a href="shop.html" class="back-btn btn btn-danger" aria-label="Volver a inicio">← Volver</a>
-          <img src="assets/img/logo.png" alt="Logo" style="height:36px;" class="ml-2 mr-2">
-          THE BOYS
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navShop">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Regresar">
+                <a href="shop.html" class="back-btn btn btn-danger" aria-label="Volver a inicio">← Volver a la tienda</a>
+                <img src="assets/img/logo.png" alt="Logo" style="height:36px;" class="ml-2 mr-2">
+                THE BOYS
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navShop">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
     </nav>
 </header>
+
 <body>
     <!-- ======================= DATOS DE DOMICILIO Y CONTACTO ======================= -->
     <div class="card-form">
@@ -81,7 +82,7 @@
         </form>
     </div>
     <!-- ======================= RESUMEN DE COMPRA ======================= -->
-    <div class="card" id="paso2Resumen" style="display:none; margin-top:120px;">
+    <div class="card bg-dark text-white" id="paso2Resumen" style="display:none; margin-top:120px;">
         <h2 class="mb-3">Revisa cuándo llega tu compra</h2>
         <!-- Dirección destino -->
         <!--<p class="text-muted mb-4">
@@ -91,7 +92,7 @@
         <div class="row">
             <!-- COLUMNA IZQUIERDA -->
             <div class="col-md-8">
-                <div class="card shadow-sm rounded-4 mb-4 p-4">
+                <div class="card shadow-sm rounded-4 mb-4 p-4 card-dark">
                     <h5 class="mb-3">Envío 1</h5>
                     <div class="d-flex justify-content-between align-items-center border-top pt-3">
                         <div class="form-check">
@@ -109,11 +110,11 @@
             </div>
             <!-- COLUMNA DERECHA — RESUMEN DE COMPRA -->
             <div class="col-md-4">
-                <div class="card shadow-sm rounded-4 p-4">
+                <div class="card shadow-sm rounded-4 mb-4 p-4 card-dark">
                     <h5 class="mb-3">Resumen de compra</h5>
                     <div class="d-flex justify-content-between mb-3">
-                        <span>Productos (2)</span>
-                        <strong>$1.069.800</strong>
+                        <span>Productos</span>
+                        <strong id="resumenProductos">$0</strong>
                     </div>
                     <div class="d-flex justify-content-between mb-3">
                         <span>Envío</span>
@@ -122,7 +123,7 @@
                     <hr>
                     <div class="d-flex justify-content-between">
                         <strong>Total</strong>
-                        <strong style="font-size:18px;">$1.069.800</strong>
+                        <strong id="resumenTotal" style="font-size:18px;">$0</strong>
                     </div>
                 </div>
             </div>
@@ -185,6 +186,14 @@
             document.getElementById("direccionFinal").textContent =
                 document.getElementById("direccion").value;
         }
+        document.addEventListener("DOMContentLoaded", () => {
+            const total = localStorage.getItem("totalCarrito");
+
+            if (total) {
+                document.getElementById("resumenProductos").textContent = total;
+                document.getElementById("resumenTotal").textContent = total;
+            }
+        });
     </script>
 
 </body>

@@ -58,7 +58,7 @@
   // Render contador
   function renderCartCount() {
     const countEl = document.getElementById('cartCount');
-    const qty = cart.reduce((s,i)=>s+i.qty,0);
+    const qty = cart.reduce((s, i) => s + i.qty, 0);
     if (countEl) countEl.textContent = qty;
   }
 
@@ -100,15 +100,15 @@
     const t = e.target;
     if (t.matches('.add-to-cart')) addToCart(t.dataset.id);
     if (t.matches('.increase')) {
-      const id = t.dataset.id; const it = cart.find(i=>i.id===id); if (!it) return;
+      const id = t.dataset.id; const it = cart.find(i => i.id === id); if (!it) return;
       it.qty++; saveCart(); renderCart(); renderCartCount();
     }
     if (t.matches('.decrease')) {
-      const id = t.dataset.id; const it = cart.find(i=>i.id===id); if (!it) return;
+      const id = t.dataset.id; const it = cart.find(i => i.id === id); if (!it) return;
       it.qty = Math.max(1, it.qty - 1); saveCart(); renderCart(); renderCartCount();
     }
     if (t.matches('.remove')) {
-      const id = t.dataset.id; cart = cart.filter(i=>i.id!==id); saveCart(); renderCart(); renderCartCount();
+      const id = t.dataset.id; cart = cart.filter(i => i.id !== id); saveCart(); renderCart(); renderCartCount();
     }
   }
 
@@ -118,6 +118,12 @@
     alert('Checkout demo — Gracias por la compra (simulada).');
     cart = []; saveCart(); renderCart(); renderCartCount();
     $('#cartModal').modal('hide');
+  }
+  
+  function guardarTotalYPagar() {
+    let total = document.getElementById("cartTotal").textContent;
+    localStorage.setItem("totalCarrito", total);
+    window.location.href = "pagos.html";
   }
 
   // init
@@ -133,6 +139,8 @@
     if (cartBodyEl) cartBodyEl.addEventListener('click', cartDelegation);
     const checkoutBtn = document.getElementById('checkoutBtn');
     if (checkoutBtn) checkoutBtn.addEventListener('click', checkout);
+    const guardarTotalYPagarBtn = document.getElementById('guardarTotalYPagar');
+    if (guardarTotalYPagarBtn) guardarTotalYPagarBtn.addEventListener('click', guardarTotalYPagar);
     // when modal opens, render cart content
     $('#cartModal').on('show.bs.modal', function () { renderCart(); });
   }
