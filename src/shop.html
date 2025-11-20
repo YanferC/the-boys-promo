@@ -4,32 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tienda — The Boys Promo</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">}
+  <link rel="stylesheet" href="assets/css/shop.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    /* ajustes específicos de tienda */
-    .shop-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 1rem; }
-    .product-card { background: rgba(34,34,34,0.85); border:2px solid var(--gold-main); border-radius:10px; padding:12px; display:flex; flex-direction:column; }
-    .product-card img { width:100%; height:160px; object-fit:cover; border-radius:6px; }
-    .product-actions { margin-top:auto; display:flex; gap:.5rem; align-items:center; }
-    .cart-count-badge { position:relative; top:-2px; margin-left:6px; }
-    /* cart modal content */
-    .cart-item { display:flex; gap:.75rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); padding:8px 0; }
-    .cart-item img { width:64px; height:48px; object-fit:cover; border-radius:6px; }
-
-    /* Back button personalizado (más visible, sin borde blanco) */
-    .back-btn {
-      border: none;
-      background: linear-gradient(90deg, var(--red-main) 60%, var(--gold-main) 100%);
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.45);
-      padding: .35rem .6rem;
-      border-radius: 6px;
-      display:inline-flex;
-      align-items:center;
-      gap:.4rem;
-    }
-  </style>
+  
 </head>
 <body>
   <!-- Navbar (basada en tu index) -->
@@ -70,6 +48,20 @@
       </div>
     </div>
 
+    <!-- Filtros y búsqueda -->
+    <div class="row mb-3">
+      <div class="col-md-6 mb-2">
+        <input type="text" id="searchInput" class="form-control" placeholder="Buscar producto...">
+      </div>
+      <div class="col-md-6 mb-2">
+        <select id="filterType" class="form-control">
+          <option value="">Todos</option>
+          <option value="camiseta">Camisas</option>
+          <option value="sudadera">Busos</option>
+          <option value="oferta">Ofertas</option>
+        </select>
+      </div>
+    </div>
     <!-- Productos -->
     <section id="productos" class="mb-4">
       <div class="shop-grid" id="productsGrid">
@@ -103,11 +95,57 @@
           </div>
           <div>
             <strong class="mr-3 text-white">Total: <span id="cartTotal">COP $0</span></strong>
-            <button class="btn btn-danger" onclick="window.location.href='pagos.html'">Pagar</button>
+            <button id="checkoutBtn" class="btn btn-danger">Pagar</button>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Modal vista rápida -->
+  <div class="modal fade" id="guiaTallaModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content" style="background:#222; color:#fff; border-radius:16px;">
+      <div class="modal-header">
+        <h5 class="modal-title">Mira la guía de tallas</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered table-dark text-center mb-3">
+          <thead>
+            <tr>
+              <th>SIZE</th><th>XS</th><th>S</th><th>M</th><th>L</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Euro</td><td>32/34</td><td>36</td><td>38</td><td>40</td></tr>
+            <tr><td>USA</td><td>0/2</td><td>4</td><td>6</td><td>8</td></tr>
+            <tr><td>Bust(in)</td><td>31-32</td><td>33</td><td>34</td><td>36</td></tr>
+            <tr><td>Bust(cm)</td><td>80.5-82.5</td><td>84.5</td><td>87</td><td>92</td></tr>
+            <tr><td>Waist(in)</td><td>24-25</td><td>26</td><td>27</td><td>29</td></tr>
+            <tr><td>Waist(cm)</td><td>62.5-64.5</td><td>66.5</td><td>69</td><td>74</td></tr>
+            <tr><td>Hips(in)</td><td>34-35</td><td>36</td><td>37</td><td>39</td></tr>
+            <tr><td>Hips(cm)</td><td>87.5-89.5</td><td>91.5</td><td>94</td><td>99</td></tr>
+          </tbody>
+        </table>
+        <div class="mb-2" style="font-size:.98em;">
+          <strong>Cómo medir tu busto:</strong>
+          <div>Con los brazos relajados a los lados, mide alrededor de la parte más llena del pecho.</div>
+        </div>
+        <div style="font-size:.98em;">
+          <strong>Cómo medir tu cintura:</strong>
+          <div>Mide alrededor de la parte más estrecha de tu cintura, generalmente alrededor del ombligo. Para un ajuste cómodo, deja un dedo entre la cinta y tu cuerpo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Toast de notificación -->
+  <div id="shopToast" class="toast" style="position:fixed; top:20px; right:20px; min-width:220px; z-index:9999; background:#222; color:#fff; border-radius:8px; box-shadow:0 2px 8px #000; display:none;">
+    <div class="toast-body" id="shopToastMsg"></div>
   </div>
 
   <!-- Footer copiado del index.html -->
