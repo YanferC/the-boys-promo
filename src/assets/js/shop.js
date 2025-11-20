@@ -7,7 +7,8 @@
       title: 'Sudadera con capucha Homelander',
       price: 39900,
       img: 'assets/img/Merch_Principal/sudaderaHomelander.jpg',
-      desc: 'The Boys Sudadera con capucha Homelander con diseño de ojos goteadores, Negro, S'
+      desc: 'The Boys Sudadera con capucha Homelander con diseño de ojos goteadores, Negro, S',
+      color: 'Negro'
     },
     {
       id: 'p2',
@@ -15,14 +16,16 @@
       price: 16999,
       img: 'assets/img/Merch_Principal/camisetaGraffiti.jpg',
       desc: 'The Boys Camiseta con foto de grupo Graffiti, Negro, M',
-      oferta: true
+      oferta: true,
+      color: 'Negro'
     },
     {
       id: 'p3',
       title: 'Camiseta Butcher',
       price: 32000,
       img: 'assets/img/Merch_Principal/camisetaButcher.jpg',
-      desc: 'The Boys Camiseta Butcher Don\'t Be A.., Negro, L'
+      desc: 'The Boys Camiseta Butcher Don\'t Be A.., Negro, L',
+      color: 'Negro'
     },
     {
       id: 'p4',
@@ -30,7 +33,41 @@
       price: 25999,
       img: 'assets/img/Merch_Principal/sudaderaTheBoys.jpg',
       desc: 'The Boys Show Logo Sudadera con capucha, Negro, S',
-      oferta: true
+      oferta: true,
+      color: 'Negro'
+    },
+    {
+      id: 'p5',
+      title: 'Camiseta portada The boys con los muchachos',
+      price: 31414,
+      img: 'assets/img/Merch_VerMas/camisa-los-chicos.jpg',
+      desc: 'The Boys Show portada camisa blanca manga corta, Blanca, M',
+      color: 'Blanco'
+    },
+    {
+      id: 'p6',
+      title: 'Camiseta homelander orgullo patriota',
+      price: 29900,
+      img: 'assets/img/Merch_VerMas/padre-hijo.jpg',
+      desc: 'Homelander orgullo de la patria?, Blanca, M',
+      color: 'Blanco'
+    },
+    {
+      id: 'p7',
+      title: 'Camiseta Casual De Hombre Con Estampado 3d The Boys',
+      price: 29999,
+      img: 'assets/img/Merch_VerMas/Camiseta-estampado-3d.jpg',
+      desc: 'Un gran estampado de lo personajes de The Boys, Blanca, L',
+      color: 'Blanco'
+    },
+    {
+      id: 'p8',
+      title: 'Sudadera Con Cremallera Billy Butcher Capitán',
+      price: 49000,
+      img: 'assets/img/Merch_VerMas/sudadera-homelander.jpg',
+      desc: 'Quieres ser patriota?, esta sudadera es para ti, Azul, L',
+      color: 'Azul',
+      oferta: true,
     }
   ];
 
