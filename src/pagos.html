@@ -14,63 +14,18 @@
 </head>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand d-flex align-items-center mx-auto text-center" href="index.html" style="font-size:2rem;">
-            <img src="assets/img/logo.png" alt="Logo" style="height:40px;" class="mr-2">
-            THE BOYS
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Regresar">
+          <a href="shop.html" class="back-btn btn btn-danger" aria-label="Volver a inicio">← Volver</a>
+          <img src="assets/img/logo.png" alt="Logo" style="height:36px;" class="ml-2 mr-2">
+          THE BOYS
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navShop">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#reviews">Reseñas</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button"
-                        data-toggle="dropdown">
-                        Temporadas
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item season-link" href="#trailer" data-slide-to="0">Temporada 1</a>
-                        <a class="dropdown-item season-link" href="#trailer" data-slide-to="1">Temporada 2</a>
-                        <a class="dropdown-item season-link" href="#trailer" data-slide-to="2">Temporada 3</a>
-                        <a class="dropdown-item season-link" href="#trailer" data-slide-to="3">Temporada 4</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="#synopsis">Sinopsis</a></li>
-                <li class="nav-item"><a class="nav-link" href="#characters">Personajes</a></li>
-                <li class="nav-item"><a class="nav-link" href="calenda">Fecha Estreno</a></li>
-                <li class="nav-item"><a class="nav-link" href="#spoiler-banner">Momentos Destacados</a></li>
-                <button class="open-modal-btn btn btn-outline-light">Enviar sugerencia</button>
-                <div id="sugerencia-modal" class="custom-modal">
-                    <div class="custom-modal-content">
-                        <span class="close-btn">&times;</span>
-                        <h2>Envíanos tu sugerencia</h2>
-                        <form id="sugerencia-form">
-                            <label for="sugerencia-nombre">Nombre:</label>
-                            <input type="text" id="sugerencia-nombre" placeholder="Tu nombre" required>
-
-                            <label for="sugerencia-correo">Correo:</label>
-                            <input type="email" id="sugerencia-correo" placeholder="tucorreo@ejemplo.com" required>
-
-                            <label for="sugerencia-texto">Tu sugerencia:</label>
-                            <textarea id="sugerencia-texto" rows="4" placeholder="Escribe aquí tu idea..."
-                                required></textarea>
-
-                            <div class="file-upload">
-                                <label for="fileInput">📎 Seleccionar archivo</label>
-                                <input type="file" id="fileInput">
-                                <div class="file-name" id="fileName">Ningún archivo seleccionado</div>
-                            </div>
-                            <button class="btn btn-outline-success" onclick="showSwal('basic')">Enviar
-                                Sugerencia</button>
-                        </form>
-                    </div>
-                </div>
-            </ul>
-        </div>
+      </div>
     </nav>
 </header>
-
 <body>
     <!-- ======================= DATOS DE DOMICILIO Y CONTACTO ======================= -->
     <div class="card-form">
